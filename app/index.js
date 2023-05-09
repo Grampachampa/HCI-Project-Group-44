@@ -15,7 +15,7 @@ const Home = () => {
     var verticalPaddingHLeft = 0;
 
     return (
-        <SafeAreaView style = {{fled: 1, backgroundColor: COLORS.lightWhite}}>
+        <SafeAreaView style = {{fled: 1, backgroundColor: COLORS.backgroundBlue}}>
             
             <Stack.Screen 
             options = {{
@@ -44,13 +44,10 @@ const Home = () => {
                         flex: 1, 
                         padding: SIZES.medium
                     }}
-                > 
-                    <Welcome 
-                    
-                    /> 
+                >
 
                     <Popularjobs />
-                    <Nearbyjobs />
+
                 </View>
             </ScrollView>
         </SafeAreaView>

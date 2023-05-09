@@ -16,7 +16,7 @@ const Welcome = () => {
   
   return (
     <View>
-      <Text>Welcome</Text>
+      <Text style={styles.userName}>Hello, Tim</Text>
     </View>
   )
 }
