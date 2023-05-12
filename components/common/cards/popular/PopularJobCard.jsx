@@ -19,7 +19,7 @@ const PopularJobCard = ({item, selectedJob, handleCardPress}) => {
 
   
   const songcover = item?.strTrackThumb 
-  console.log(songcover)
+  //console.log(songcover)
 
 
 

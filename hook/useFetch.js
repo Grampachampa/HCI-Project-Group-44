@@ -2151,6 +2151,7 @@ const useFetch = () => {
                   }
                 ]
               });
+              console.log(error)
             //ssetError(error.response.data);
             
 
