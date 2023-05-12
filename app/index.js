@@ -23,7 +23,7 @@ const Home = () => {
                 headerShadowVisible: false,
 
                 headerLeft: () => (
-                    <View style={{paddingHorizontal: horizontalPaddingHLeft, marginVertical:verticalPaddingHLeft}}><ScreenHeaderBtn iconUrl={icons.logo} dimension="150%" resize = "center" /></View>
+                    <View style={{paddingHorizontal: horizontalPaddingHLeft, marginVertical:verticalPaddingHLeft}}><ScreenHeaderBtn iconUrl={icons.logo} dimension="150%" resize = "center"/></View>
                 ),
                 headerRight: () => (
                     
@@ -42,7 +42,7 @@ const Home = () => {
                 <View 
                     style = {{
                         flex: 1, 
-                        padding: SIZES.medium
+                        padding: 0
                     }}
                 >
 

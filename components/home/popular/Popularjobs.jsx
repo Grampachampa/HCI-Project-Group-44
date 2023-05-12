@@ -1,7 +1,7 @@
 import {React, useState} from 'react'
 import { View, Text, TouchableOpacity, FlatList, ActivityIndicator } from 'react-native'
 import { useRouter, error } from 'expo-router'
-import {COLORS, SIZES} from '../../../constants'
+import {COLORS, icons, images, SIZES} from '../../../constants'
 import PopularJobCard from '../../common/cards/popular/PopularJobCard';
 import useFetch from '../../../hook/useFetch';
 
@@ -11,29 +11,29 @@ const Popularjobs = () => {
 
   const router = useRouter();
 
-  const {data, isLoading, error} = useFetch();
+  const {data, isLoading, error} = useFetch()
+  //console.log(data["loved"]);
+  
   
   
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.headerTitle}>Explore Music!</Text>
-      </View>
+      
       
       <View style={styles.cardsContainer}>
         {isLoading? (
           <ActivityIndicator  size="large" color={COLORS.lighterGreen} />
 
         ) : error ? (
-            <Text>Something Went Wrong</Text>
+            <Text style={{color:"red"}}>Something Went Wrong</Text>
 
         ) : (
           <FlatList
-            data = {[1,2,3,4]}
+            data = {data["loved"]}
             renderItem = {({item}) => (
               <PopularJobCard item={item} />
             )}
-            keyExtractor={item => item?.job_id}
+            keyExtractor={item => item?.strTrackMBID}
             contentContainerStyle={{columnGap: SIZES.medium}}
             
           />

@@ -4,25 +4,27 @@ import { COLORS, FONT, SHADOWS, SIZES } from "../../../../constants";
 
 const styles = StyleSheet.create({
   container: (selectedJob, item) => ({
-    width: 250,
+    width: "100%",
+    height: 200,
     padding: SIZES.xLarge,
-    backgroundColor: selectedJob === item.job_id ? COLORS.primary : "#FFF",
+    backgroundColor: selectedJob === item.job_id ? COLORS.backgroundBlue : COLORS.backgroundBlue,
     borderRadius: SIZES.medium,
     justifyContent: "space-between",
     ...SHADOWS.medium,
-    shadowColor: COLORS.white,
+    shadowColor: COLORS.lighterGreen,
   }),
   logoContainer: (selectedJob, item) => ({
-    width: 50,
-    height: 50,
-    backgroundColor: selectedJob === item.job_id ? "#FFF" : COLORS.white,
+    width: 150,
+    height: 150,
+    backgroundColor: COLORS.backgroundBlue,
     borderRadius: SIZES.medium,
     justifyContent: "center",
     alignItems: "center",
   }),
   logoImage: {
-    width: "70%",
-    height: "70%",
+    width: "100%",
+    height: "100%",
+    borderRadius: SIZES.medium,
   },
   companyName: {
     fontSize: SIZES.medium,

@@ -12,6 +12,10 @@ import chevronRight from '../assets/icons/chevron-right.png'
 import notification from '../assets/icons/Notification.png'
 import logo from '../assets/icons/Logo.png'
 import tuning from '../assets/icons/Tuning.png'
+import commments from '../assets/icons/commments.png'
+import listens from '../assets/icons/listens.png'
+import likes from '../assets/icons/Likes.png'
+import questionMark from '../assets/icons/questionMark.png'
 
 
 export default {
@@ -28,5 +32,9 @@ export default {
   message,
   notification,
   logo,
-  tuning
+  tuning,
+  commments,
+  listens,
+  likes,
+  questionMark
 };
