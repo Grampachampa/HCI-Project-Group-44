@@ -63,19 +63,19 @@ export default function Notifications ({ navigation }) {
             <View style={style.upper_container}>
                 <View style={{flex:4}}>
                     <Image style={{resizeMode: 'contain', height:71, width:58}}
-                    source={require('/Users/bedirhangursoy/Downloads/HCI-project-no-clone/Images/Logo.png')}/>
+                    source={require('../Images/Logo.png')}/>
                 </View>
                 <View style={{flex:1}}>
                    <Image style={{resizeMode: 'contain', height:51, width:47, paddingLeft:100}}
-                   source={require('/Users/bedirhangursoy/Downloads/HCI-project-no-clone/Images/Settings.png')}/>
+                   source={require('../ImagesSettings.png')}/>
                 </View>
                 <View style={{padding:8, flex:1}}>
                     <Image style={{resizeMode: 'contain', height:37, width:39, paddingLeft:120}}
-                    source={require('/Users/bedirhangursoy/Downloads/HCI-project-no-clone/Images/Notification.png')}/>
+                    source={require('../ImagesNotification.png')}/>
                 </View>
                 <View style={{flex:1}}>
                     <Image style={{resizeMode: 'contain', height:45, width:47, paddingLeft:130}}
-                    source={require('/Users/bedirhangursoy/Downloads/HCI-project-no-clone/Images/Messages.png')}/>
+                    source={require('../ImagesMessages.png')}/>
                 </View>
             </View>
 
@@ -91,7 +91,7 @@ export default function Notifications ({ navigation }) {
                     {notifications.map((n) => (
                     <TouchableOpacity key={n.id} onPress={() => handleNotificationPress(n.id)}>
                         <View style={{ flexDirection: 'row', paddingTop: 20, paddingLeft: 20 }}>
-                        <Image style={{height: 60, width: 60}}source={require('/Users/bedirhangursoy/Downloads/HCI-project-no-clone/Images/Profile_Picture.png')}/>
+                        <Image style={{height: 60, width: 60}}source={require('../ImagesProfile_Picture.png')}/>
                         <View style={{paddingLeft: 10, paddingTop: 10}}>
                         <Text style={style.name_text}>{n.message}</Text>
                         <Text style={style.time_text}>{n.time}</Text>
