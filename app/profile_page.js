@@ -1,5 +1,5 @@
-import { useState, useRef, useEffect } from 'react';
-import { StyleSheet, View, Text, Image, ScrollView, SafeAreaView, Switch, Animated, TouchableOpacity, StatusBar } from 'react-native';
+import { useState} from 'react';
+import { StyleSheet, View, Text, Image, SafeAreaView, Switch, Animated, TouchableOpacity } from 'react-native';
 
 
 export default function Home ({ navigation }) {
@@ -88,8 +88,10 @@ export default function Home ({ navigation }) {
 
             <View style={styles.upper_container}>
                 <View style={{flex:4}}>
+                    <TouchableOpacity onPress={() => navigation.navigate('SearchScreen')}>
                     <Image style={{resizeMode: 'contain', height:71, width:58}}
                     source={require('/Users/bedirhangursoy/Downloads/HCI-project-no-clone/Images/Logo.png')}/>
+                    </TouchableOpacity>
                 </View>
                 <View style={{flex:1}}>
                    <Image style={{resizeMode: 'contain', height:51, width:47, paddingLeft:100}}

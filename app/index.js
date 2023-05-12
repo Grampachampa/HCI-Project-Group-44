@@ -1,89 +1,26 @@
-import React, { useState } from 'react';
-import { View, TextInput, FlatList, Text, Image, TouchableOpacity } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import ProfilePageLikedSongs from './profile_page_liked_songs';
+import Home from './profile_page';
+import Notifications from './notifications-page_2';
+import AddToPlaylistPage from './add_to_playlist_page';
+import SearchScreen from './search_page';
 
-const songsData = [
-  { id: 1, title: 'Jungle', artist: 'Davies', image_path: require('../Images/Jungle.png') },
-  { id: 2, title: 'Delta', artist: 'Tijoux', image_path: require('../Images/Delta.png') },
-  { id: 3, title: 'Hentin Up', artist: 'EZE', image_path: require('../Images/Hentin_Up.png') },
-  {id: 4, title: 'Head In the Clouds', artist: 'Chenoweth', image_path: require('../Images/Clouds.png')}
-  
-  // Add more songs to the array
-];
+const Stack = createStackNavigator();
 
-const SearchScreen = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
-  const [selectedSongs, setSelectedSongs] = useState([]);
-
-  const handleSearch = (query) => {
-    setSearchQuery(query);
-
-    if (query.trim() === '') {
-      setSearchResults([]); // Clear search results when search query is empty
-    } else {
-      const filteredSongs = songsData.filter((song) =>
-        song.title.toLowerCase().includes(query.toLowerCase())
-      );
-      setSearchResults(filteredSongs);
-    }
+export default function Navigation() {
+    return (
+      <NavigationContainer independent={true}>
+        <Stack.Navigator screenOptions={{headerShown:false}}>
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="ProfilePageLikedSongs" component={ProfilePageLikedSongs} />
+          <Stack.Screen name="Notifications" component={Notifications} />
+          <Stack.Screen name='AddToPlaylistPage' component={AddToPlaylistPage} />
+          <Stack.Screen name='ProfilePage' component={Home} />
+          <Stack.Screen name='SearchScreen' component={SearchScreen} />
+          {/* Add more screens/components as needed */}
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
   };
 
-  const handleSongSelect = (song) => {
-    setSelectedSongs((prevSongs) => [...prevSongs, song]);
-  };
-
-  const handleSongRemove = (song) => {
-    setSelectedSongs((prevSongs) => prevSongs.filter((item) => item.id !== song.id));
-  };
-
-  return (
-    <View>
-      <TextInput
-        style={{ height: 40, borderColor: 'gray', borderWidth: 1, paddingHorizontal: 10 }}
-        placeholder="Search songs..."
-        value={searchQuery}
-        onChangeText={handleSearch}
-      />
-      {searchResults.length > 0 && (
-        <FlatList
-          data={searchResults}
-          keyExtractor={(item) => item.id.toString()}
-          renderItem={({ item }) => (
-            <TouchableOpacity onPress={() => handleSongSelect(item)}>
-              <View style={{flexDirection: 'row', paddingTop: 30, paddingLeft: 25}}>
-              <Image style={{height: 60, width: 60, flex: 1}} source={item.image_path}/>
-              <View style={{paddingLeft: 9, flex: 5}}>
-              <Text>{item.title}</Text>
-              <Text>{item.artist}</Text>
-              </View>
-              <Image style={{flex: 1, fontSize: 30, alignItems: 'center', height: 30, width: 30, resizeMode: 'contain'}} source={require('../Images/hamburger-button.jpg')}/>
-              </View>
-            </TouchableOpacity>
-          )}
-        />
-      )}
-      {selectedSongs.length > 0 && (
-        <View>
-          <Text>Recently Searched:</Text>
-          {selectedSongs.map((song) => (
-              <TouchableOpacity key={song.id} onPress={() => handleSongRemove(song)}>
-                <View key={song.id} style={{flexDirection: 'row', padding: 10}}>
-                <Image style={{height: 60, width: 60}} source={song.image_path}/>
-                <View style={{paddingLeft: 9}}>
-                <Text key={song.id}>{song.title}</Text>
-                <Text key={song.id}>{song.artist}</Text>
-                </View>
-                </View>
-              </TouchableOpacity>
-          ))}
-        </View>
-      )}
-    </View>
-  );
-};
-
-
-
-
-
-export default SearchScreen;

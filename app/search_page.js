@@ -10,7 +10,7 @@ const songsData = [
   // Add more songs to the array
 ];
 
-const SearchScreen = () => {
+const SearchScreen = ({ navigation }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [selectedSongs, setSelectedSongs] = useState([]);
@@ -49,15 +49,25 @@ const SearchScreen = () => {
           data={searchResults}
           keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => (
-            <TouchableOpacity onPress={() => handleSongSelect(item)}>
-              <View style={{flexDirection: 'row', paddingTop: 30, paddingLeft: 25}}>
-              <Image style={{height: 60, width: 60}} source={item.image_path}/>
-              <View style={{paddingLeft: 9}}>
-              <Text>{item.title}</Text>
-              <Text>{item.artist}</Text>
+            <View style={{flexDirection:'row'}}>
+              <View style={{flex: 6}}>
+              <TouchableOpacity onPress={() => handleSongSelect(item)}>
+                
+                  <View style={{flexDirection: 'row', paddingTop: 30, paddingLeft: 25}}>
+                      <Image style={{height: 60, width: 60, flex: 1}} source={item.image_path}/>
+                    <View style={{paddingLeft: 9, flex: 5}}>
+                      <Text>{item.title}</Text>
+                      <Text>{item.artist}</Text>
+                    </View>
+                  </View>
+              </TouchableOpacity>
               </View>
+              <View style={{flex: 1}}>
+                <TouchableOpacity onPress={() => navigation.navigate('AddToPlaylistPage')}>
+                  <Image style={{flex: 1, fontSize: 30, alignItems: 'center', height: 30, width: 30, resizeMode: 'contain'}} source={require('../Images/hamburger-button.jpg')}/>
+                </TouchableOpacity>
               </View>
-            </TouchableOpacity>
+            </View>
           )}
         />
       )}
