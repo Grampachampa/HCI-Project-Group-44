@@ -33,7 +33,7 @@ const Popularjobs = () => {
             renderItem = {({item}) => (
               <PopularJobCard item={item} />
             )}
-            keyExtractor={item => item?.strTrackMBID}
+            keyExtractor={item => item?.idTrack}
             contentContainerStyle={{columnGap: SIZES.medium}}
             
           />
