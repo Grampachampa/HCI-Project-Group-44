@@ -10,16 +10,7 @@ import { COLORS, icons, images, SIZES } from '../constants';
 import {Nearbyjobs, Popularjobs, ScreenHeaderBtn, Welcome} from '../components';
 
 
-
-
 SplashScreen.preventAutoHideAsync();
-
-/* 
- const Layout = () =>  {
-    return <Stack />;
-}
-
-export default Layout;  */
 
 
 import { LogBox } from 'react-native';
@@ -27,31 +18,13 @@ LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
 LogBox.ignoreAllLogs();//Ignore all log notifications
 
 
-var horizontalPaddingHRight = 5;
-var horizontalPaddingHLeft = 20;
-var verticalPaddingHLeft = 0;
+
 
  export default function Layout() {
     return (
         
-        <SafeAreaProvider options = {{}}>
-                <Tabs screenOptions = {{
-                headerStyle: {backgroundColor: COLORS.backgroundBlue},
-                headerShadowVisible: false,
-
-                headerLeft: () => (
-                    <View style={{paddingHorizontal: horizontalPaddingHLeft, marginVertical:verticalPaddingHLeft}}><ScreenHeaderBtn iconUrl={icons.logo} dimension="150%" resize = "center"/></View>
-                ),
-                headerRight: () => (
-                    
-                    <View style={{flexDirection:"row"}}>
-                        <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.tuning} dimension="100%"/></View>
-                        <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.notification} dimension="80%"/></View>
-                        <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.message} dimension="100%" resize = "cover" /></View>
-                    </View>
-                ),
-                headerTitle: "",
-            }}>
+        <SafeAreaProvider>
+                <Tabs screenOptions = {screenOptions}>
                     <Tabs.Screen name="index"  options={{ tabBarLabel: "Home" }} />
                     <Tabs.Screen name="search"  options={{ tabBarLabel: "Search" }} />
                     <Tabs.Screen name="upload"  options={{ tabBarLabel: "Upload" }} />
@@ -64,3 +37,26 @@ var verticalPaddingHLeft = 0;
   } 
 
 
+
+
+var horizontalPaddingHRight = 5;
+var horizontalPaddingHLeft = 20;
+var verticalPaddingHLeft = 0;
+
+const screenOptions = {
+    headerStyle: {backgroundColor: COLORS.backgroundBlue},
+    headerShadowVisible: false,
+
+    headerLeft: () => (
+        <View style={{paddingHorizontal: horizontalPaddingHLeft, marginVertical:verticalPaddingHLeft}}><ScreenHeaderBtn iconUrl={icons.logo} dimension="150%" resize = "center"/></View>
+    ),
+    headerRight: () => (
+        
+        <View style={{flexDirection:"row"}}>
+            <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.tuning} dimension="100%"/></View>
+            <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.notification} dimension="80%"/></View>
+            <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.message} dimension="100%" resize = "cover" /></View>
+        </View>
+    ),
+    headerTitle: "",
+}

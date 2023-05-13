@@ -11,7 +11,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const outputPage = () => {
     return (
-        <SafeAreaView style = {{fled: 1, backgroundColor: COLORS.backgroundBlue}}>
+        <SafeAreaView style = {{flex: 1, backgroundColor: COLORS.backgroundBlue}}>
             <Stack.Screen />
             <HomeScreen />            
         </SafeAreaView>
