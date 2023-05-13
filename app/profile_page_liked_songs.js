@@ -36,15 +36,17 @@ const ProfilePageLikedSongs = ({ navigation }) => {
       </View>
       <ScrollView>
       {likedSongs.map((song) => (
-          <TouchableOpacity key={song.id} onPress={() => handleSongRemove(song.id)}>
             <View style={{ flexDirection: 'row', paddingTop: 30, paddingLeft: 25 }}>
               <Image style={{ height: 60, width: 60 }} source={song.image_path} />
-              <View>
+              <View style={{flex: 6}}>
                 <Text style={{ paddingLeft: 8, fontSize: 20, fontWeight: 'bold', color: 'white' }}>{song.title}</Text>
                 <Text style={{ paddingLeft: 8, fontSize: 18, paddingTop: 5, color: 'white' }}>Song • {song.artist}</Text>
               </View>
+              <TouchableOpacity key={song.id} onPress={() => handleSongRemove(song.id)}>
+                <Image style={{ height: 0, width: 0, paddingLeft: 100, flex: 0.5, resizeMode: 'contain'}} source={require('../Images/close_button.png')} />
+              </TouchableOpacity>
             </View>
-          </TouchableOpacity>
+          
         ))}
       </ScrollView>
     </SafeAreaView>

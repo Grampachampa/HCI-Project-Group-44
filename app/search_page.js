@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { View, TextInput, FlatList, Text, Image, TouchableOpacity } from 'react-native';
+import { View, TextInput, FlatList, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { songs } from './liked_songs';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const songsData = [
-  { id: 9, title: 'Something else', artist: 'IDK', image_path: require('../Images/faith.png') },
-  { id: 2, title: 'Delta', artist: 'Tijoux', image_path: require('../Images/Delta.png') },
-  { id: 3, title: 'Hentin Up', artist: 'EZE', image_path: require('../Images/Hentin_Up.png') },
-  {id: 4, title: 'Head In the Clouds', artist: 'Chenoweth', image_path: require('../Images/Clouds.png')}
-  
+  { id: 9, title: 'Whispering Shadows', artist: 'Luna Rainheart', image_path: require('../Images/whisperinshadows.jpeg') },
+  { id: 2, title: 'Eternal Dream', artist: 'Phoenix Ember', image_path: require('../Images/eternal_dream.jpeg') },
+  { id: 3, title: 'Midnight Serenade', artist: 'Aurora Moonlight', image_path: require('../Images/serenade.webp') },
+  { id: 4, title: 'Lost in Stardust', artist: 'Nova Skye', image_path: require('../Images/lost.png') }
   // Add more songs to the array
 ];
 
@@ -45,14 +45,33 @@ const SearchScreen = ({ navigation }) => {
   };
 
   return (
-    <View>
+    <View style={{ flex: 1, backgroundColor: '#03001C' }}>
+      <View style={styles.upper_container}>
+        <View style={{ flex: 4 }}>
+          <Image style={{ resizeMode: 'contain', height: 71, width: 58 }} source={require('../Images/Logo.png')} />
+        </View>
+        <View style={{ flex: 1 }}>
+          <Image style={{ resizeMode: 'contain', height: 51, width: 47, paddingLeft: 100 }} source={require('../Images/Settings.png')} />
+        </View>
+        <View style={{ padding: 8, flex: 1 }}>
+            <TouchableOpacity onPress={() => navigation.navigate('Notification')}>
+            <Image style={{ resizeMode: 'contain', height: 37, width: 39, paddingLeft: 120 }} source={require('../Images/Notification.png')} />
+          </TouchableOpacity>
+        </View>
+        <View style={{ flex: 1 }}>
+          <Image style={{ resizeMode: 'contain', height: 45, width: 47, paddingLeft: 130 }} source={require('../Images/Messages.png')} />
+        </View>
+      </View>
+
       <TextInput
-        style={{ height: 40, borderColor: 'gray', borderWidth: 1, paddingHorizontal: 10 }}
-        placeholder="Search songs..."
+        style={{ height: 40, borderColor: '#887D7D', borderWidth: 1, paddingHorizontal: 10, color: 'black', backgroundColor: 'white', borderRadius: 10, margin: 5}}
+        placeholder="Albums, Songs or Artists"
         value={searchQuery}
         onChangeText={handleSearch}
       />
       {searchResults.length > 0 && (
+        <View>
+          <Text style={styles.searchResultstext}>Top Searches:</Text>
         <FlatList
           data={searchResults}
           keyExtractor={(item) => item.id.toString()}
@@ -61,16 +80,16 @@ const SearchScreen = ({ navigation }) => {
               <View style={{flex: 6}}>
               <TouchableOpacity onPress={() => handleSongSelect(item)}>
                 
-                  <View style={{flexDirection: 'row', paddingTop: 30, paddingLeft: 25}}>
+                  <View style={{flexDirection: 'row', paddingTop: 20, paddingLeft: 25}}>
                       <Image style={{height: 60, width: 60, flex: 1}} source={item.image_path}/>
                     <View style={{paddingLeft: 9, flex: 5}}>
-                      <Text>{item.title}</Text>
-                      <Text>{item.artist}</Text>
+                      <Text style={styles.name_song}>{item.title}</Text>
+                      <Text style={styles.artist_song}>Song • {item.artist}</Text>
                     </View>
                   </View>
               </TouchableOpacity>
               </View>
-              <View style={{flex: 1}}>
+              <View style={{flex: 1, paddingTop: 40}}>
                 <TouchableOpacity onPress={() => handleAddToLikedSongs(item, songs)}>
                   <Image style={{flex: 1, fontSize: 30, alignItems: 'center', height: 30, width: 30, resizeMode: 'contain'}} source={require('../Images/heart_button.png')}/>
                 </TouchableOpacity>
@@ -78,20 +97,27 @@ const SearchScreen = ({ navigation }) => {
             </View>
           )}
         />
+        </View>
       )}
       {selectedSongs.length > 0 && (
         <View>
-          <Text>Recently Searched:</Text>
+          <Text style={styles.searchResultstext}>Recently Searched:</Text>
           {selectedSongs.map((song) => (
-              <TouchableOpacity key={song.id} onPress={() => handleSongRemove(song)}>
-                <View key={song.id} style={{flexDirection: 'row', padding: 10}}>
-                <Image style={{height: 60, width: 60}} source={song.image_path}/>
-                <View style={{paddingLeft: 9}}>
-                <Text key={song.id}>{song.title}</Text>
-                <Text key={song.id}>{song.artist}</Text>
+              
+                <View key={song.id} style={{flexDirection: 'row', paddingTop: 20}}>
+                <View style={{paddingLeft: 24}}>
+                <Image style={{height: 56, width: 56}} source={song.image_path}/>
+                </View>
+                <View style={{paddingLeft: 10, flex: 6}}>
+                <Text key={song.id} style={styles.name_song}>{song.title}</Text>
+                <Text key={song.id} style={styles.artist_song}>Song • {song.artist}</Text>
+                </View>
+                <View style={{flex: 1.32}}>
+                <TouchableOpacity key={song.id} onPress={() => handleSongRemove(song)}>
+                  <Image style={{height: 30, width: 30}}source={require('../Images/close_button.png')}/>
+                </TouchableOpacity>
                 </View>
                 </View>
-              </TouchableOpacity>
           ))}
         </View>
       )}
@@ -99,6 +125,30 @@ const SearchScreen = ({ navigation }) => {
   );
 };
 
+const styles = StyleSheet.create({
+  upper_container: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      height: 70,
+      width: '80%'},
+  name_song: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 25,
+    paddingTop: 5
+    },
+  artist_song: {
+    color: 'white',
+    fontSize: 15,
+    paddingTop: 5,
+    color: '#868686'}
+    ,
+  searchResultstext: {
+    color: 'white',
+    fontSize: 30,
+    fontWeight: 'bold',
+    paddingTop: 10
+  },});
 
 
 
