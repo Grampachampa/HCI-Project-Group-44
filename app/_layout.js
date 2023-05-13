@@ -6,6 +6,10 @@ import { useFonts } from 'expo-font';
 import * as splash from 'expo-splash-screen';
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import {HomeScreen} from '../screens/home'
+import { COLORS, icons, images, SIZES } from '../constants';
+import {Nearbyjobs, Popularjobs, ScreenHeaderBtn, Welcome} from '../components';
+
+
 
 
 SplashScreen.preventAutoHideAsync();
@@ -18,22 +22,37 @@ SplashScreen.preventAutoHideAsync();
 export default Layout;  */
 
 
-function RenderHomeScreen() {
-    return(
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <HomeScreen/>
-        </View>
-    );}
 
 
+var horizontalPaddingHRight = 5;
+var horizontalPaddingHLeft = 20;
+var verticalPaddingHLeft = 0;
 
  export default function Layout() {
     return (
-      <SafeAreaProvider>
-        <Tabs>
-            <Tabs.Screen name="index"  options={{ tabBarLabel: "Home" }} />
-            <Tabs.Screen name="test"  options={{ tabBarLabel: "other index" }} />
-        </Tabs>
-      </SafeAreaProvider>
+        
+        <SafeAreaProvider options = {{}}>
+                <Tabs screenOptions = {{
+                headerStyle: {backgroundColor: COLORS.backgroundBlue},
+                headerShadowVisible: false,
+
+                headerLeft: () => (
+                    <View style={{paddingHorizontal: horizontalPaddingHLeft, marginVertical:verticalPaddingHLeft}}><ScreenHeaderBtn iconUrl={icons.logo} dimension="150%" resize = "center"/></View>
+                ),
+                headerRight: () => (
+                    
+                    <View style={{flexDirection:"row"}}>
+                        <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.tuning} dimension="100%"/></View>
+                        <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.notification} dimension="80%"/></View>
+                        <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.message} dimension="100%" resize = "cover" /></View>
+                    </View>
+                ),
+                headerTitle: "",
+            }}>
+                    <Tabs.Screen name="index"  options={{ tabBarLabel: "Home" }} />
+                    <Tabs.Screen name="test"  options={{ tabBarLabel: "other index" }} />
+                </Tabs>
+        </SafeAreaProvider>
+        
     );
   } 
