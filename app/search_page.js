@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { View, TextInput, FlatList, Text, Image, TouchableOpacity } from 'react-native';
+import { songs } from './liked_songs';
 
 const songsData = [
-  { id: 1, title: 'Jungle', artist: 'Davies', image_path: require('../Images/Jungle.png') },
+  { id: 9, title: 'Something else', artist: 'IDK', image_path: require('../Images/faith.png') },
   { id: 2, title: 'Delta', artist: 'Tijoux', image_path: require('../Images/Delta.png') },
   { id: 3, title: 'Hentin Up', artist: 'EZE', image_path: require('../Images/Hentin_Up.png') },
   {id: 4, title: 'Head In the Clouds', artist: 'Chenoweth', image_path: require('../Images/Clouds.png')}
@@ -36,6 +37,13 @@ const SearchScreen = ({ navigation }) => {
     setSelectedSongs((prevSongs) => prevSongs.filter((item) => item.id !== song.id));
   };
 
+  const handleAddToLikedSongs = (song, songs) => {
+    // Add the selected song to the "Liked Songs" playlist
+    // You can implement your logic to add the song to the playlist here
+    songs.push(song);
+    console.log('Adding song to Liked Songs playlist:', song);
+  };
+
   return (
     <View>
       <TextInput
@@ -63,8 +71,8 @@ const SearchScreen = ({ navigation }) => {
               </TouchableOpacity>
               </View>
               <View style={{flex: 1}}>
-                <TouchableOpacity onPress={() => navigation.navigate('AddToPlaylistPage')}>
-                  <Image style={{flex: 1, fontSize: 30, alignItems: 'center', height: 30, width: 30, resizeMode: 'contain'}} source={require('../Images/hamburger-button.jpg')}/>
+                <TouchableOpacity onPress={() => handleAddToLikedSongs(item, songs)}>
+                  <Image style={{flex: 1, fontSize: 30, alignItems: 'center', height: 30, width: 30, resizeMode: 'contain'}} source={require('../Images/heart_button.png')}/>
                 </TouchableOpacity>
               </View>
             </View>
