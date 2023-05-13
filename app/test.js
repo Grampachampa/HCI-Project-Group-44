@@ -37,31 +37,12 @@ const outputPage = () => {
     return (
         <SafeAreaView style = {{fled: 1, backgroundColor: COLORS.backgroundBlue}}>
             
-            <Stack.Screen 
-            options = {{
-                headerStyle: {backgroundColor: COLORS.backgroundBlue},
-                headerShadowVisible: false,
+             
+          
 
-                headerLeft: () => (
-                    <View style={{paddingHorizontal: horizontalPaddingHLeft, marginVertical:verticalPaddingHLeft}}><ScreenHeaderBtn iconUrl={icons.logo} dimension="150%" resize = "center"/></View>
-                ),
-                headerRight: () => (
-                    
-                    <View style={{flexDirection:"row"}}>
-                        <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.tuning} dimension="100%"/></View>
-                        <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.notification} dimension="80%"/></View>
-                        <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.message} dimension="100%" resize = "cover" /></View>
-                    </View>
-                ),
-                headerTitle: "",
-            }}
-            />
-
-            <HomeScreen />
+            <View><Text style={{color:COLORS.lighterGreen}}>AHAHAHA IT WORKSSS</Text></View>
             
         </SafeAreaView>
     )
 }
 export default outputPage;  
-
-
