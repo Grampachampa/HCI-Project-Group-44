@@ -1,0 +1,11 @@
+low importance
+- Liked playlist doesn't re-open when profile is opened
+- Make all songs one list (dict); add isliked var
+- (if we have time) finish playlists
+- make things look pretty
+
+
+High importance
+* Msg, Notif, Settings realization
+* upload page
+* Stats page
