@@ -31,7 +31,7 @@ function RenderHomeScreen() {
     return (
       <SafeAreaProvider>
         <Tabs>
-            <Tabs.Screen name="index"  options={{ tabBarLabel: "index" }} />
+            <Tabs.Screen name="index"  options={{ tabBarLabel: "Home" }} />
             <Tabs.Screen name="test"  options={{ tabBarLabel: "other index" }} />
         </Tabs>
       </SafeAreaProvider>
