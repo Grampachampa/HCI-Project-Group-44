@@ -22,6 +22,9 @@ SplashScreen.preventAutoHideAsync();
 export default Layout;  */
 
 
+import { LogBox } from 'react-native';
+LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+LogBox.ignoreAllLogs();//Ignore all log notifications
 
 
 var horizontalPaddingHRight = 5;
@@ -50,9 +53,14 @@ var verticalPaddingHLeft = 0;
                 headerTitle: "",
             }}>
                     <Tabs.Screen name="index"  options={{ tabBarLabel: "Home" }} />
-                    <Tabs.Screen name="test"  options={{ tabBarLabel: "other index" }} />
+                    <Tabs.Screen name="search"  options={{ tabBarLabel: "Search" }} />
+                    <Tabs.Screen name="upload"  options={{ tabBarLabel: "Upload" }} />
+                    <Tabs.Screen name="stats"  options={{ tabBarLabel: "Stats" }} />
+                    <Tabs.Screen name="profile"  options={{ tabBarLabel: "Profile" }} />
                 </Tabs>
         </SafeAreaProvider>
         
     );
   } 
+
+
