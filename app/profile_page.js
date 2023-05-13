@@ -26,22 +26,22 @@ export default function Home ({ navigation }) {
                     <View>
                         <TouchableOpacity onPress={() => navigation.navigate('ProfilePageLikedSongs')}>
                         <View style={{padding: 10}}>
-                            <Image style={{resizeMode: 'contain', height:125, width:125}} source={require('/Users/bedirhangursoy/Downloads/HCI-project-no-clone/Images/Liked.png')}/>
+                            <Image style={{resizeMode: 'contain', height:125, width:125}} source={require('../Images/Liked.png')}/>
                             <Text style={{textAlign: 'center', paddingTop: 5, color: 'white'}}>Liked</Text>
                         </View> 
                         </TouchableOpacity>   
                         <View style={{padding: 10}}>
-                            <Image style={{resizeMode: 'contain', height:125, width:125}} source={require('/Users/bedirhangursoy/Downloads/HCI-project-no-clone/Images/Sunny_side_up.jpeg')}/>
+                            <Image style={{resizeMode: 'contain', height:125, width:125}} source={require('../Images/Sunny_side_up.jpeg')}/>
                             <Text style={{textAlign: 'center', paddingTop: 5, color: 'white'}}>Sunny Side Up</Text>
                         </View>
                     </View>
                     <View>
                         <View style={{padding: 10}}>
-                            <Image style={{resizeMode: 'contain', height:125, width:125}} source={require('/Users/bedirhangursoy/Downloads/HCI-project-no-clone/Images/Moonlight.png')}/>
+                            <Image style={{resizeMode: 'contain', height:125, width:125}} source={require('../Images/Moonlight.png')}/>
                             <Text style={{textAlign: 'center', paddingTop: 5, color: 'white'}}>Midnight Moods</Text>
                         </View>
                         <View style={{padding: 10}}>
-                            <Image style={{resizeMode: 'contain', height:125, width:125}} source={require('/Users/bedirhangursoy/Downloads/HCI-project-no-clone/Images/faith.png')}/>
+                            <Image style={{resizeMode: 'contain', height:125, width:125}} source={require('../Images/faith.png')}/>
                             <Text style={{textAlign: 'center', paddingTop: 5, color: 'white'}}>Faith</Text>
                         </View>
                     </View>
@@ -59,21 +59,21 @@ export default function Home ({ navigation }) {
                             <View style={{flexDirection: 'row', justifyContent: 'space-between', height:250, width:'80%', paddingTop: 5, alignItems: 'center'}}>
                                 <View>
                                     <View style={{padding: 10}}>
-                                        <Image style={{resizeMode: 'contain', height:125, width:125}} source={require('/Users/bedirhangursoy/Downloads/HCI-project-no-clone/Images/just_an_echo.png')}/>
+                                        <Image style={{resizeMode: 'contain', height:125, width:125}} source={require('../Images/just_an_echo.png')}/>
                                         <Text style={{textAlign: 'center', paddingTop: 5, color: 'white'}}>Just an Echo</Text>
                                     </View>    
                                     <View style={{padding: 10}}>
-                                        <Image style={{resizeMode: 'contain', height:125, width:125}} source={require('/Users/bedirhangursoy/Downloads/HCI-project-no-clone/Images/galactic_reverie.png')}/>
+                                        <Image style={{resizeMode: 'contain', height:125, width:125}} source={require('../Images/galactic_reverie.png')}/>
                                         <Text style={{textAlign: 'center', paddingTop: 5, color: 'white'}}>Galactic Reverie</Text>
                                     </View>
                                 </View>
                                 <View>
                                     <View style={{padding: 10}}>
-                                        <Image style={{resizeMode: 'contain', height:125, width:125}} source={require('/Users/bedirhangursoy/Downloads/HCI-project-no-clone/Images/echoes_of_eup....png')}/>
+                                        <Image style={{resizeMode: 'contain', height:125, width:125}} source={require('../Images/echoes_of_eup....png')}/>
                                         <Text style={{textAlign: 'center', paddingTop: 5, color: 'white'}}>Echoes of Eup...</Text>
                                     </View>
                                     <View style={{padding: 10}}>
-                                        <Image style={{resizeMode: 'contain', height:125, width:125}} source={require('/Users/bedirhangursoy/Downloads/HCI-project-no-clone/Images/dreamscape.png')}/>
+                                        <Image style={{resizeMode: 'contain', height:125, width:125}} source={require('../Images/dreamscape.png')}/>
                                         <Text style={{textAlign: 'center', paddingTop: 5, color: 'white'}}>Dreamscape</Text>
                                     </View>
                                 </View>
@@ -90,30 +90,30 @@ export default function Home ({ navigation }) {
                 <View style={{flex:4}}>
                     <TouchableOpacity onPress={() => navigation.navigate('SearchScreen')}>
                     <Image style={{resizeMode: 'contain', height:71, width:58}}
-                    source={require('/Users/bedirhangursoy/Downloads/HCI-project-no-clone/Images/Logo.png')}/>
+                    source={require('../Images/Logo.png')}/>
                     </TouchableOpacity>
                 </View>
                 <View style={{flex:1}}>
                    <Image style={{resizeMode: 'contain', height:51, width:47, paddingLeft:100}}
-                   source={require('/Users/bedirhangursoy/Downloads/HCI-project-no-clone/Images/Settings.png')}/>
+                   source={require('../Images/Settings.png')}/>
                 </View>
                 <View style={{padding:8, flex:1}}>
                 <TouchableOpacity onPress={() => navigation.navigate('Notifications')}>
                     
                         <Image style={{resizeMode: 'contain', height:37, width:39, paddingLeft:120}}
-                        source={require('/Users/bedirhangursoy/Downloads/HCI-project-no-clone/Images/Notification.png')}/>
+                        source={require('../Images/Notification.png')}/>
                 </TouchableOpacity>
                 </View>
                 <View style={{flex:1}}>
                     <Image style={{resizeMode: 'contain', height:45, width:47, paddingLeft:130}}
-                    source={require('/Users/bedirhangursoy/Downloads/HCI-project-no-clone/Images/Messages.png')}/>
+                    source={require('../Images/Messages.png')}/>
                 </View>
             </View>
 
             <View style={styles.profile_container}>
                 <View style={{flex:1, paddingLeft:20}}>
                     <Image style={{resizeMode: 'contain', height:160, width:130}}
-                    source={require('/Users/bedirhangursoy/Downloads/HCI-project-no-clone/Images/Profile_Picture.png')}/>
+                    source={require('../Images/Profile_Picture.png')}/>
                 </View>
                 <View style={{flex:2, paddingLeft: 120, paddingTop: 20}}>
                     <Text style={{fontSize:20, fontWeight:'bold' , color: 'white'}}>Profile Name</Text>
