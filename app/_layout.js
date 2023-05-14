@@ -33,14 +33,14 @@ function returnHome() {
         
         <SafeAreaProvider style={{}}>
                 <Tabs screenOptions = {{
-                    headerStyle: {backgroundColor: COLORS.backgroundBlue},
+                    headerStyle: {backgroundColor: COLORS.backgroundBlue, height: 100},
                     headerShadowVisible: false,
                     tabBarShowLabel : false,
 
                     tabBarStyle : {backgroundColor: COLORS.darkerGreen, height: 80, borderTopWidth: 1, borderTopColor: COLORS.lighterGreen, shadowOpacity: 0},
 
                     headerLeft: () => (
-                        <View style={{paddingHorizontal: horizontalPaddingHLeft, marginVertical:verticalPaddingHLeft}}><ScreenHeaderBtn iconUrl={icons.logo} dimension="150%" resize = "center"/></View>
+                        <View style={{paddingHorizontal: horizontalPaddingHLeft, marginBottom:13}}><ScreenHeaderBtn iconUrl={icons.logo} dimension="150%" resize = "center"/></View>
                     ),
                     headerRight: () => (
                         
@@ -54,7 +54,7 @@ function returnHome() {
 
 
                     tabBarInactiveBackgroundColor: COLORS.darkerGreen,
-                    tabBarActiveBackgroundColor: COLORS.darkerGreen,
+                    tabBarActiveBackgroundColor: COLORS.slightlyLessDarkGreen,
                     tabBarActiveTintColor: COLORS.lighterGreen,
                     tabBarInactiveTintColor: COLORS.white,
                 }}>
@@ -146,7 +146,7 @@ const  screenOptions = ({ navigation }) => ({
     headerShadowVisible: false,
 
     headerLeft: () => (
-        <View style={{paddingHorizontal: horizontalPaddingHLeft, marginVertical:verticalPaddingHLeft}}><ScreenHeaderBtn iconUrl={icons.logo} dimension="150%" resize = "center"/></View>
+        <View style={{paddingHorizontal: horizontalPaddingHLeft, marginBottom:13}}><ScreenHeaderBtn iconUrl={icons.logo} dimension="150%" resize = "center"/></View>
     ),
     headerRight: () => (
         

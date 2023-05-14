@@ -20,6 +20,7 @@ import home from '../assets/icons/Home.png'
 import fyp from '../assets/icons/FYP.png'
 import stats from '../assets/icons/Stats.png'
 import upload from '../assets/icons/Upload.png'
+import liked from '../assets/icons/Liked_image.png'
 
 
 export default {
@@ -45,5 +46,5 @@ export default {
   fyp,
   stats,
   upload,
-
+  liked
 };
