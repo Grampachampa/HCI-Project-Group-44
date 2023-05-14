@@ -7,6 +7,10 @@ import * as splash from 'expo-splash-screen';
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { COLORS, icons, images, SIZES } from '../constants';
 import {Nearbyjobs, Popularjobs, ScreenHeaderBtn, Welcome} from '../components';
+import { NavigationContainer } from '@react-navigation/native';
+import {ProfilePageLikedSongs} from './profile_page_liked_songs';
+import { createStackNavigator } from '@react-navigation/stack';
+import { Notifications } from './notifications-page_2';
 
 
 SplashScreen.preventAutoHideAsync();
@@ -148,13 +152,23 @@ const  screenOptions = ({ navigation }) => ({
         
         <View style={{flexDirection:"row"}}>
             <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.tuning} dimension="100%"/></View>
-            <View style={{paddingHorizontal: horizontalPaddingHRight}}>
-                <TouchableOpacity onPress={() => navigation.navigate('Notifications')}>
-                    <ScreenHeaderBtn iconUrl={icons.notification} dimension="80%"/>
-                </TouchableOpacity>
-            </View>
+            <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.notification} dimension="80%" navigation={navigation}/></View>
             <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.message} dimension="100%" resize = "cover" /></View>
         </View>
     ),
     headerTitle: "",
 });
+
+
+const Navigation = () => {
+    return (
+      <NavigationContainer independent={true}>
+        <Stack.Navigator screenOptions = {{headerShown : false}}>
+          <Stack.Screen name = "Profile Page" component = {Home}/>
+          <Stack.Screen name = "ProfilePageLikedSongs" component = {ProfilePageLikedSongs}/>
+          <Stack.Screen name = 'Notifications' component = {Notifications}/>
+          <Stack.Screen name = 'ScreenHeaderBtn' component = {ScreenHeaderBtn}/>
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
