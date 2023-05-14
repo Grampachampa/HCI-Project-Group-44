@@ -5,7 +5,6 @@ import { useCallback} from 'react';
 import { useFonts } from 'expo-font';
 import * as splash from 'expo-splash-screen';
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import {HomeScreen} from '../screens/home'
 import { COLORS, icons, images, SIZES } from '../constants';
 import {Nearbyjobs, Popularjobs, ScreenHeaderBtn, Welcome} from '../components';
 

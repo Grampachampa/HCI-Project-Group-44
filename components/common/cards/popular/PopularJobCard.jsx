@@ -3,30 +3,24 @@ import { View, Text, TouchableOpacity, Image } from 'react-native'
 import {COLORS, icons, images, SIZES} from '../../../../constants'
 import styles from './popularjobcard.style'
 import {ScreenHeaderBtn} from '../../../../components';
+import { SongBody } from '../../../../app/song_body';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
 
 
 
-
-const PopularJobCard = ({item, selectedJob, handleCardPress}) => {
+const PopularJobCard =  ({item, selectedJob, navigation}) => {
 
   const random_viewsabbrNum = abbrNum(item?.views, 1);
   const random_likesabbrNum = abbrNum(item?.likes, 1);
-  const random_commentsabbrNum = abbrNum(item?.comments, 1);
-
-
-  
+  const random_commentsabbrNum = abbrNum(item?.comments, 1);  
   const songcover = item?.strTrackThumb 
-  //console.log(songcover)
-
-
-
   return (
-
-    <View>
+      <View>
 
       <TouchableOpacity
       style= {styles.container(selectedJob, item)}
-      //onPress = {() => handleCardPress(item)}
+      onPress={() => navigation.navigate('SongBody')}
       >
 
         <View style={{flexDirection:"row"}}>
@@ -76,12 +70,15 @@ const PopularJobCard = ({item, selectedJob, handleCardPress}) => {
 
           
         </View>  
-      </TouchableOpacity>
+      </TouchableOpacity> 
 
 
     </View>
-  )
-}
+  )}
+
+
+
+
 
 
 function abbrNum(number, decPlaces) {
@@ -119,5 +116,11 @@ function abbrNum(number, decPlaces) {
 
   return number;
 }
+
+
+
+
+ 
+
 
 export default PopularJobCard
