@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, Image, SafeAreaView, Switch, Animated, Touchabl
 import { NavigationContainer } from '@react-navigation/native';
 import {ProfilePageLikedSongs} from './profile_page_liked_songs';
 import { createStackNavigator } from '@react-navigation/stack';
+import { Notifications } from './notifications-page_2';
 
 function Home ({ navigation }) {
     const [checked, setChecked] = useState(false)
@@ -172,6 +173,7 @@ export default function Navigation() {
         <Stack.Navigator screenOptions = {{headerShown : false}}>
           <Stack.Screen name = "Profile Page" component = {Home}/>
           <Stack.Screen name = "ProfilePageLikedSongs" component = {ProfilePageLikedSongs}/>
+          <Stack.Screen name = 'Notifications' component = {Notifications}/>
         </Stack.Navigator>
       </NavigationContainer>
     );
