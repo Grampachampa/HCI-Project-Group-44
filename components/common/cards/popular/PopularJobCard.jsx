@@ -8,13 +8,10 @@ import {ScreenHeaderBtn} from '../../../../components';
 
 
 const PopularJobCard = ({item, selectedJob, handleCardPress}) => {
-  const random_views = Math.floor(Math.random() * 100000) + 1;
-  const random_likes = Math.floor(random_views/50) * (Math.floor(Math.random() * 48) + 1);
-  const random_comments = Math.floor(random_likes/50) * (Math.floor(Math.random() * 48) + 1);
 
-  const random_viewsabbrNum = abbrNum(random_views, 1);
-  const random_likesabbrNum = abbrNum(random_likes, 1);
-  const random_commentsabbrNum = abbrNum(random_comments, 1);
+  const random_viewsabbrNum = abbrNum(item?.views, 1);
+  const random_likesabbrNum = abbrNum(item?.likes, 1);
+  const random_commentsabbrNum = abbrNum(item?.comments, 1);
 
 
   

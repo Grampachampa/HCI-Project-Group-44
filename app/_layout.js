@@ -32,6 +32,9 @@ function returnHome() {
                 <Tabs screenOptions = {{
                     headerStyle: {backgroundColor: COLORS.backgroundBlue},
                     headerShadowVisible: false,
+                    tabBarShowLabel : false,
+
+                    tabBarStyle : {backgroundColor: COLORS.darkerGreen, height: 80, borderTopWidth: 1, borderTopColor: COLORS.lighterGreen, shadowOpacity: 0},
 
                     headerLeft: () => (
                         <View style={{paddingHorizontal: horizontalPaddingHLeft, marginVertical:verticalPaddingHLeft}}><ScreenHeaderBtn iconUrl={icons.logo} dimension="150%" resize = "center"/></View>
@@ -58,7 +61,8 @@ function returnHome() {
                         tabBarIcon: ({size,focused,color}) => {
                             return (
                               <Image
-                                style={{ width: size, height: size }}
+                              style={{ width: "60%", height: "60%"}}
+                              resizeMode='contain'
                                 source={icons.fyp}
                               />
                             );
@@ -67,12 +71,15 @@ function returnHome() {
                     />
                     
                     <Tabs.Screen name="search"  
-                        options={{ tabBarLabel: "Search",  
+                        options={{ tabBarLabel: "aaa",  
+                        
                         tabBarIcon: ({size,focused,color}) => {
                             return (
                               <Image
-                                style={{ width: size, height: size }}
+                                style={{ width: "60%", height: "60%"}}
+                                resizeMode='contain'
                                 source={icons.search}
+                                
                               />
                             );
                           },
@@ -84,7 +91,8 @@ function returnHome() {
                         tabBarIcon: ({size,focused,color}) => {
                             return (
                               <Image
-                                style={{ width: size, height: size }}
+                              style={{ width: "80%", height: "80%"}}
+                              resizeMode='contain'
                                 source={icons.upload}
                               />
                             );
@@ -96,7 +104,8 @@ function returnHome() {
                         tabBarIcon: ({size,focused,color}) => {
                             return (
                               <Image
-                                style={{ width: size, height: size }}
+                                style={{ width: "60%", height: "60%"}}
+                                resizeMode='contain'
                                 source={icons.stats}
                               />
                             );
@@ -108,7 +117,8 @@ function returnHome() {
                         tabBarIcon: ({size,focused,color}) => {
                             return (
                               <Image
-                                style={{ width: size, height: size }}
+                                style={{ width: "80%", height: "80%"}}
+                                resizeMode='contain'
                                 source={icons.home}
                               />
                             );
