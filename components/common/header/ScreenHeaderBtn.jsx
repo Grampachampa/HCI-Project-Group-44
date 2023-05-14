@@ -4,7 +4,13 @@ import { useNavigation } from '@react-navigation/native';
 
 import styles from './screenheader.style'
 
-const ScreenHeaderBtn = ({iconUrl, dimension, resize}) => {
+
+
+const ScreenHeaderBtn = ({iconUrl, dimension, resize, isLikeButton, item}) => {
+
+  if (isLikeButton == 'true') {
+    console.log("is like button")
+  }
 
   const onPressHandler = () => {
     navigation.navigate('Notifications');

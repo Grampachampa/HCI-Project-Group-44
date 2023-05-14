@@ -20,7 +20,7 @@ const PopularJobCard =  ({item, selectedJob, navigation}) => {
 
       <TouchableOpacity
       style= {styles.container(selectedJob, item)}
-      onPress={() => navigation.navigate('SongBody')}
+      //onPress={() => navigation.navigate('SongBody')}
       >
 
         <View style={{flexDirection:"row"}}>
@@ -49,7 +49,7 @@ const PopularJobCard =  ({item, selectedJob, navigation}) => {
         <View style={{flexDirection:"row", marginLeft:"53%", marginTop: "24%", justifyContent:"center", position:"absolute"}}>
 
           <View style={{paddingRight: 0, flexDirection:"column"}}>
-            <ScreenHeaderBtn iconUrl={icons.likes} dimension="130%" resize = "contain"/>
+            <ScreenHeaderBtn iconUrl={icons.likes} dimension="130%" resize = "contain" islikebutton = "true" item = {item}/>
             <Text style={{color:COLORS.white, paddingTop: 10, textAlign: 'center'}}>{random_likesabbrNum}</Text>
           </View>
 
