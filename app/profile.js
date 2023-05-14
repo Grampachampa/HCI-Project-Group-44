@@ -1,9 +1,6 @@
 import { useState} from 'react';
 import { StyleSheet, View, Text, Image, SafeAreaView, Switch, Animated, TouchableOpacity } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import {ProfilePageLikedSongs} from './profile_page_liked_songs';
-import { createStackNavigator } from '@react-navigation/stack';
-import { Notifications } from './notifications-page_2';
+
 
 function Home ({ navigation }) {
     const [checked, setChecked] = useState(false)
@@ -165,16 +162,3 @@ const styles = StyleSheet.create({
 
 
 
-const Stack = createStackNavigator();
-
-export default function Navigation() {
-    return (
-      <NavigationContainer independent={true}>
-        <Stack.Navigator screenOptions = {{headerShown : false}}>
-          <Stack.Screen name = "Profile Page" component = {Home}/>
-          <Stack.Screen name = "ProfilePageLikedSongs" component = {ProfilePageLikedSongs}/>
-          <Stack.Screen name = 'Notifications' component = {Notifications}/>
-        </Stack.Navigator>
-      </NavigationContainer>
-    );
-  }
