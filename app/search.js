@@ -46,13 +46,14 @@ const SearchScreen = ({ navigation }) => {
 
   return (
     <View style={{ flex: 1, backgroundColor: '#03001C' }}>
-
+      <View style={{paddingTop: 10}}>
       <TextInput
         style={{ height: 40, borderColor: '#887D7D', borderWidth: 1, paddingHorizontal: 10, color: 'black', backgroundColor: 'white', borderRadius: 10, margin: 5}}
         placeholder="Albums, Songs or Artists"
         value={searchQuery}
         onChangeText={handleSearch}
       />
+      </View>
       {searchResults.length > 0 && (
         <View>
           <Text style={styles.searchResultstext}>Top Searches:</Text>
