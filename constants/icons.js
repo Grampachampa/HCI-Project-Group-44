@@ -16,6 +16,10 @@ import commments from '../assets/icons/commments.png'
 import listens from '../assets/icons/listens.png'
 import likes from '../assets/icons/Likes.png'
 import questionMark from '../assets/icons/questionMark.png'
+import home from '../assets/icons/Home.png'
+import fyp from '../assets/icons/FYP.png'
+import stats from '../assets/icons/Stats.png'
+import upload from '../assets/icons/Upload.png'
 
 
 export default {
@@ -36,5 +40,10 @@ export default {
   commments,
   listens,
   likes,
-  questionMark
+  questionMark,
+  home,
+  fyp,
+  stats,
+  upload,
+
 };
