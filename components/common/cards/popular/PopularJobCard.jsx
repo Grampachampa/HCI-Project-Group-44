@@ -49,8 +49,7 @@ const PopularJobCard =  ({item, selectedJob, navigation}) => {
         <View style={{flexDirection:"row", marginLeft:"53%", marginTop: "24%", justifyContent:"center", position:"absolute"}}>
 
           <View style={{paddingRight: 0, flexDirection:"column"}}>
-            <ScreenHeaderBtn iconUrl={icons.likes} dimension="130%" resize = "contain" islikebutton = "true" item = {item}/>
-            <Text style={{color:COLORS.white, paddingTop: 10, textAlign: 'center'}}>{random_likesabbrNum}</Text>
+            <ScreenHeaderBtn iconUrl={icons.likes} dimension="130%" resize = "contain" isLikeButton = "true" item = {item}/>
           </View>
 
           <View style={{paddingLeft: 25, paddingRight: 29, flexDirection:"column"}}>
@@ -81,7 +80,7 @@ const PopularJobCard =  ({item, selectedJob, navigation}) => {
 
 
 
-function abbrNum(number, decPlaces) {
+export function abbrNum(number, decPlaces) {
   // 2 decimal places => 100, 3 => 1000, etc
   decPlaces = Math.pow(10,decPlaces);
 
