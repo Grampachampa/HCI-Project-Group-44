@@ -1,6 +1,8 @@
 import { useState} from 'react';
 import { StyleSheet, View, Text, Image, SafeAreaView, Switch, Animated, TouchableOpacity } from 'react-native';
-
+import { NavigationContainer } from '@react-navigation/native';
+import {ProfilePageLikedSongs} from './profile_page_liked_songs';
+import { createStackNavigator } from '@react-navigation/stack';
 
 function Home ({ navigation }) {
     const [checked, setChecked] = useState(false)
@@ -14,7 +16,7 @@ function Home ({ navigation }) {
       }).start();
       setChecked(!checked);
     };
-  
+
     const renderContent = () => {
         if (checked) {
           return (
@@ -98,7 +100,7 @@ function Home ({ navigation }) {
             <View style={{borderBottomColor: '#57C5B6', borderBottomWidth: 1.2,}}/>
 
             <View>
-            
+
             {renderContent()}
 
                 <View style={{ paddingTop: 35, alignItems: 'center' }}>
@@ -107,6 +109,7 @@ function Home ({ navigation }) {
                     onValueChange={toggleChecked}
                     trackColor={{ false: 'red', true: '#57C5B6' }}
                     thumbColor={'#193636'}
+                    style={{borderColor: '#57C5B6', borderWidth: 1.2, borderRadius: 14}}
                     />
                 </View>
             </View>
@@ -138,7 +141,7 @@ const styles = StyleSheet.create({
         height: 100,
         justifyContent: 'center',
         alignItems: 'center',
-        
+
     },
     settings: {
         width: 100,
@@ -162,3 +165,15 @@ const styles = StyleSheet.create({
 
 
 
+const Stack = createStackNavigator();
+
+export default function Navigation() {
+    return (
+      <NavigationContainer independent={true}>
+        <Stack.Navigator screenOptions = {{headerShown : false}}>
+          <Stack.Screen name = "Profile Page" component = {Home}/>
+          <Stack.Screen name = "ProfilePageLikedSongs" component = {ProfilePageLikedSongs}/>
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
