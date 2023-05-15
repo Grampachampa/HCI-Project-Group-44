@@ -7,7 +7,6 @@ import * as splash from 'expo-splash-screen';
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { COLORS, icons, images, SIZES } from '../constants';
 import {Nearbyjobs, Popularjobs, ScreenHeaderBtn, Welcome} from '../components';
-import styles from '/Users/bedirhangursoy/HCI-Project-Group-44/components/common/header/screenheader.style.js'
 
 
 SplashScreen.preventAutoHideAsync();
@@ -45,9 +44,7 @@ function returnHome() {
                             <View style={{paddingHorizontal: horizontalPaddingHRight}}>
                               <ScreenHeaderBtn iconUrl={icons.tuning} dimension="100%"/>
                             </View>
-                            <View style={{paddingHorizontal: horizontalPaddingHRight}}>
-                              <Image source = {icons.notification} resizeMode = 'contain' style={styles.btnImg()}/>
-                            </View>
+                              <ScreenHeaderBtn iconUrl={icons.notification} dimension="80%"/>
                             <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.message} dimension="100%" resize = "cover" /></View>
                         </View>
                     ),
@@ -141,4 +138,3 @@ function returnHome() {
 var horizontalPaddingHRight = 5;
 var horizontalPaddingHLeft = 20;
 var verticalPaddingHLeft = 0;
-
