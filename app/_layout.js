@@ -41,9 +41,13 @@ function returnHome() {
                     headerRight: () => (
                         
                         <View style={{flexDirection:"row"}}>
-                            <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.tuning} dimension="100%"/></View>
-                            <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.notification} dimension="80%"/></View>
-                            <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.message} dimension="100%" resize = "cover" /></View>
+                            <View style={{paddingHorizontal: horizontalPaddingHRight}}>
+                              <ScreenHeaderBtn iconUrl={icons.tuning} dimension="100%"/>
+                            </View>
+                            <View style={{paddingHorizontal: horizontalPaddingHRight}}>
+                              <Image source = {icons.notification} resizeMode = {resize} style={styles.btnImg(dimension)}/>
+                            </View>
+                            <View style={{paddingHorizontal: horizontalPaddingHRsight}}><ScreenHeaderBtn iconUrl={icons.message} dimension="100%" resize = "cover" /></View>
                         </View>
                     ),
                     headerTitle: "",
