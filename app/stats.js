@@ -1,12 +1,8 @@
 import { ScrollView, SafeAreaView, Text, View, FlatList, Button, Image, StyleSheet } from 'react-native';
 import { COLORS, icons, images, SIZES } from '../constants';
-import { Popularjobs } from '../components';
-import { useState, useEffect } from 'react';
+
 import useFetch  from '../hook/useFetch';
-import outputPage from '.';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 import Swiper from 'react-native-swiper';
 
 
@@ -28,19 +24,16 @@ const LikedPage = () => {
   return (
       <SafeAreaView style = {{flex: 1, backgroundColor: COLORS.backgroundBlue}}>
         <View  style={{ flex:1, paddingTop: 10}}> 
+        <View style={{alignItems: "center", padding: 10}}>
+                      <Text style={[style.text, {fontSize: 25}]}>From most liked to least liked</Text>
+                    </View>
           
           <FlatList
               data={data}
               style={{}}
               keyExtractor={(item) => item.strMusicBrainzID.toString()}
               renderItem={({ item, index }) => {
-                if (index === 0){
-                  return(
-                    <View style={{alignItems: "center", padding: 10}}>
-                      <Text style={[style.text, {fontSize: 25}]}>From most liked to least liked</Text>
-                    </View>
-                  );
-                }else {
+                
                   return(
                 <View style={{flex: 1, flexDirection: "row", borderWidth: 0, borderColor: "white", margin: 15, marginLeft: 0}}>
                   <Image source={item?.strTrackThumb != null ? {uri:item?.strTrackThumb}: icons.questionMark} style={{flex: 1, width: 150, height: 150, borderRadius: 20, margin: 1}}></Image>
@@ -66,7 +59,7 @@ const LikedPage = () => {
                     </View>
                   </View>
                 </View>
-              );}}}
+              );}}
             />
 
         </View>      
@@ -94,19 +87,15 @@ const CommentPage = () => {
   return (
       <SafeAreaView style = {{flex: 1, backgroundColor: COLORS.backgroundBlue}}>
         <View  style={{ flex:1, paddingTop: 10}}> 
-          
+        <View style={{alignItems: "center", padding: 10}}>
+                      <Text style={[style.text, {fontSize: 20}]}>From most commented to least commented</Text>
+                    </View>
           <FlatList
               data={data}
               style={{}}
               keyExtractor={(item) => item.strMusicBrainzID.toString()}
               renderItem={({ item, index }) => {
-                if (index === 0){
-                  return(
-                    <View style={{alignItems: "center", padding: 10}}>
-                      <Text style={[style.text, {fontSize: 20}]}>From most commented to least commented</Text>
-                    </View>
-                  );
-                }else {
+                
                   return(
                 <View style={{flex: 1, flexDirection: "row", borderWidth: 0, borderColor: "white", margin: 15, marginLeft: 0}}>
                   <Image source={item?.strTrackThumb != null ? {uri:item?.strTrackThumb}: icons.questionMark} style={{flex: 1, width: 150, height: 150, borderRadius: 20, margin: 1}}></Image>
@@ -132,7 +121,7 @@ const CommentPage = () => {
                     </View>
                   </View>
                 </View>
-              );}}}
+              );}}
             />
 
         </View>      
@@ -159,6 +148,9 @@ const ViewPage = () => {
   
   return (
       <SafeAreaView style = {{flex: 1, backgroundColor: COLORS.backgroundBlue}}>
+        <View style={{alignItems: "center", paddingTop: 10}}>
+                      <Text style={[style.text, {fontSize: 25}]}>From most viewed to least viewed</Text>
+                    </View>
         <View  style={{ flex:1, paddingTop: 10}}> 
           
           <FlatList
@@ -166,13 +158,7 @@ const ViewPage = () => {
               style={{}}
               keyExtractor={(item) => item.strMusicBrainzID.toString()}
               renderItem={({ item, index }) => {
-                if (index === 0){
-                  return(
-                    <View style={{alignItems: "center", padding: 10}}>
-                      <Text style={[style.text, {fontSize: 25}]}>From most viewed to least viewed</Text>
-                    </View>
-                  );
-                }else {
+                
                   return(
                 <View style={{flex: 1, flexDirection: "row", borderWidth: 0, borderColor: "white", margin: 15, marginLeft: 0}}>
                   <Image source={item?.strTrackThumb != null ? {uri:item?.strTrackThumb}: icons.questionMark} style={{flex: 1, width: 150, height: 150, borderRadius: 20, margin: 1}}></Image>
@@ -198,7 +184,7 @@ const ViewPage = () => {
                     </View>
                   </View>
                 </View>
-              );}}}
+              );}}
             />
 
         </View>      
@@ -217,7 +203,7 @@ const style = StyleSheet.create({
 })
 
 const SwipingNavigator = () => (
-  <Swiper loop={true} showsPagination={false}>
+  <Swiper loop={false} showsPagination={true}>
     <LikedPage />
     <CommentPage />
     <ViewPage />
