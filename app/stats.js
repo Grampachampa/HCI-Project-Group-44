@@ -1,12 +1,8 @@
 import { ScrollView, SafeAreaView, Text, View, FlatList, Button, Image, StyleSheet } from 'react-native';
 import { COLORS, icons, images, SIZES } from '../constants';
-import { Popularjobs } from '../components';
-import { useState, useEffect } from 'react';
+
 import useFetch  from '../hook/useFetch';
-import outputPage from '.';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 import Swiper from 'react-native-swiper';
 import {LikeButton} from '../components';
 import { abbrNum } from '../components/common/cards/popular/PopularJobCard';
@@ -33,6 +29,9 @@ const LikedPage = () => {
   return (
       <SafeAreaView style = {{flex: 1, backgroundColor: COLORS.backgroundBlue}}>
         <View  style={{ flex:1, paddingTop: 10}}> 
+        <View style={{alignItems: "center", padding: 10}}>
+                      <Text style={{color: COLORS.white, fontSize: 25, fontWeight: "bold"}}>Most Liked</Text>
+                    </View>
           
           <FlatList
               data={data}
@@ -43,13 +42,7 @@ const LikedPage = () => {
                 const random_viewsabbrNum = abbrNum(item?.views, 1);
                 const random_likesabbrNum = abbrNum(item?.likes, 1);
                 const random_commentsabbrNum = abbrNum(item?.comments, 1);
-                if (index === 0){
-                  return(
-                    <View style={{alignItems: "center", padding: 10}}>
-                      <Text style={{color: COLORS.white, fontSize: 25, fontWeight: "bold"}}>Most Liked</Text>
-                    </View>
-                  );
-                }else {
+                
                   return(
                 <View style={{flex: 1, flexDirection: "row", borderWidth: 0, borderColor: "white", margin: 15, marginLeft: 0}}>
                   <Image source={item?.strTrackThumb != null ? {uri:item?.strTrackThumb}: icons.questionMark} style={{flex: 1, width: 150, height: 150, borderRadius: 20, margin: 1}}></Image>
@@ -78,7 +71,7 @@ const LikedPage = () => {
                     </View>
                   </View>
                 </View>
-              );}}}
+              );}}
             />
 
         </View>      
@@ -106,7 +99,9 @@ const CommentPage = () => {
   return (
       <SafeAreaView style = {{flex: 1, backgroundColor: COLORS.backgroundBlue}}>
         <View  style={{ flex:1, paddingTop: 10}}> 
-          
+        <View style={{alignItems: "center", padding: 10}}>
+                      <Text style={{color: COLORS.white, fontSize: 25, fontWeight: "bold"}}>Most Comments</Text>
+                    </View>
           <FlatList
               data={data}
               style={{}}
@@ -115,13 +110,7 @@ const CommentPage = () => {
                 const random_viewsabbrNum = abbrNum(item?.views, 1);
                 const random_likesabbrNum = abbrNum(item?.likes, 1);
                 const random_commentsabbrNum = abbrNum(item?.comments, 1);
-                if (index === 0){
-                  return(
-                    <View style={{alignItems: "center", padding: 10}}>
-                      <Text style={{color: COLORS.white, fontSize: 25, fontWeight: "bold"}}>Most Comments</Text>
-                    </View>
-                  );
-                }else {
+                
                   return(
                 <View style={{flex: 1, flexDirection: "row", borderWidth: 0, borderColor: "white", margin: 15, marginLeft: 0}}>
                   <Image source={item?.strTrackThumb != null ? {uri:item?.strTrackThumb}: icons.questionMark} style={{flex: 1, width: 150, height: 150, borderRadius: 20, margin: 1}}></Image>
@@ -150,7 +139,7 @@ const CommentPage = () => {
                     </View>
                   </View>
                 </View>
-              );}}}
+              );}}
             />
 
         </View>      
@@ -177,6 +166,9 @@ const ViewPage = () => {
   
   return (
       <SafeAreaView style = {{flex: 1, backgroundColor: COLORS.backgroundBlue}}>
+        <View style={{alignItems: "center", padding: 10}}>
+                      <Text style={{color: COLORS.white, fontSize: 25, fontWeight: "bold"}}>Most Listened</Text>
+                    </View>
         <View  style={{ flex:1, paddingTop: 10}}> 
           
           <FlatList
@@ -187,13 +179,7 @@ const ViewPage = () => {
                 const random_viewsabbrNum = abbrNum(item?.views, 1);
                 const random_likesabbrNum = abbrNum(item?.likes, 1);
                 const random_commentsabbrNum = abbrNum(item?.comments, 1);
-                if (index === 0){
-                  return(
-                    <View style={{alignItems: "center", padding: 10}}>
-                      <Text style={{color: COLORS.white, fontSize: 25, fontWeight: "bold"}}>Most Listened</Text>
-                    </View>
-                  );
-                }else {
+                
                   return(
                 <View style={{flex: 1, flexDirection: "row", borderWidth: 0, borderColor: "white", margin: 15, marginLeft: 0}}>
                   <Image source={item?.strTrackThumb != null ? {uri:item?.strTrackThumb}: icons.questionMark} style={{flex: 1, width: 150, height: 150, borderRadius: 20, margin: 1}}></Image>
@@ -222,7 +208,7 @@ const ViewPage = () => {
                     </View>
                   </View>
                 </View>
-              );}}}
+              );}}
             />
 
         </View>      
