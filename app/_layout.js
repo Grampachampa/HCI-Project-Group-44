@@ -141,3 +141,4 @@ function returnHome() {
 var horizontalPaddingHRight = 5;
 var horizontalPaddingHLeft = 20;
 var verticalPaddingHLeft = 0;
+
