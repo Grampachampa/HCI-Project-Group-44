@@ -28,7 +28,7 @@ const NotificationItem = ({ message, onDismiss }) => {
   };
   
 
-  export const Notifications = () => {
+export const Notifications = ({ navigation }) => {
 
     const [notifications, setNotifications] = useState([
         { id: 1, message: 'Rob starting following you',  time: '9 minutes ago'},
@@ -121,4 +121,3 @@ const style = StyleSheet.create({
         },   
     });
      
-    

@@ -7,6 +7,10 @@ import * as splash from 'expo-splash-screen';
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { COLORS, icons, images, SIZES } from '../constants';
 import {Nearbyjobs, Popularjobs, ScreenHeaderBtn, Welcome} from '../components';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { Notifications } from './notifications-page_2';
+
 
 
 SplashScreen.preventAutoHideAsync();
@@ -24,7 +28,7 @@ function returnHome() {
         </View>
     );}
 
- export default function Layout() {
+export default function Layout ({ navigation }) {
     return (
         
         <SafeAreaProvider style={{}}>
@@ -44,7 +48,6 @@ function returnHome() {
                             <View style={{paddingHorizontal: horizontalPaddingHRight}}>
                               <ScreenHeaderBtn iconUrl={icons.tuning} dimension="100%"/>
                             </View>
-                              <ScreenHeaderBtn iconUrl={icons.notification} dimension="80%"/>
                             <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.message} dimension="100%" resize = "cover" /></View>
                         </View>
                     ),
