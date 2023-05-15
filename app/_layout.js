@@ -41,9 +41,13 @@ function returnHome() {
                     headerRight: () => (
                         
                         <View style={{flexDirection:"row"}}>
-                            <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.tuning} dimension="100%"/></View>
-                            <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.notification} dimension="80%"/></View>
-                            <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.message} dimension="100%" resize = "cover" /></View>
+                            <View style={{paddingHorizontal: horizontalPaddingHRight}}>
+                              <ScreenHeaderBtn iconUrl={icons.tuning} dimension="100%"/>
+                            </View>
+                            <View style={{paddingHorizontal: horizontalPaddingHRight}}>
+                              <Image source = {icons.notification} resizeMode = {resize} style={styles.btnImg(dimension)}/>
+                            </View>
+                            <View style={{paddingHorizontal: horizontalPaddingHRsight}}><ScreenHeaderBtn iconUrl={icons.message} dimension="100%" resize = "cover" /></View>
                         </View>
                     ),
                     headerTitle: "",
@@ -136,21 +140,3 @@ function returnHome() {
 var horizontalPaddingHRight = 5;
 var horizontalPaddingHLeft = 20;
 var verticalPaddingHLeft = 0;
-
-const  screenOptions = () => ({
-    headerStyle: {backgroundColor: COLORS.backgroundBlue},
-    headerShadowVisible: false,
-
-    headerLeft: () => (
-        <View style={{paddingHorizontal: horizontalPaddingHLeft, marginBottom:13}}><ScreenHeaderBtn iconUrl={icons.logo} dimension="150%" resize = "center"/></View>
-    ),
-    headerRight: () => (
-        
-        <View style={{flexDirection:"row"}}>
-            <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.tuning} dimension="100%"/></View>
-            <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.notification} dimension="80%"/></View>
-            <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.message} dimension="100%" resize = "cover" /></View>
-        </View>
-    ),
-    headerTitle: "",
-});
