@@ -28,7 +28,8 @@ Step 3: The App will start loading on your mobile device! Do not worry if it tak
 ## ⚙️ Troubleshooting
 - If the app doesn't load within the first 2 or 3 minutes of you loading attempting to open it up, shake your devide (this opens a developer menu) and press the reload button
 - If the app is stuck at 100% loaded, reload the app in the same manner
-- If you have installation problems, feel free to contact gtoup 44 via university email or telephone number (+358 40 324 7317)
+- Icons can be slow to load in - especially the first time. This is normal, and is not the fault of your mobile device
+- If you have installation problems (or issues running the software), feel free to contact gtoup 44 via university email or telephone number (+358 40 324 7317)
 
 ## 📌 Current limitations
 #### Due to time and budget limitations, the app has a number of limitations. To avoid confusion for the user, the most prominent are listed below
