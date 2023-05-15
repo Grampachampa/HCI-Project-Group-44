@@ -2,7 +2,7 @@ import {useState, useEffect, React} from 'react'
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 import {COLORS, icons, images, SIZES} from '../../../../constants'
 import styles from './popularjobcard.style'
-import {ScreenHeaderBtn} from '../../../../components';
+import {LikeButton} from '../../../../components';
 import { SongBody } from '../../../../app/song_body';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
@@ -49,17 +49,17 @@ const PopularJobCard =  ({item, selectedJob, navigation}) => {
         <View style={{flexDirection:"row", marginLeft:"53%", marginTop: "24%", justifyContent:"center", position:"absolute"}}>
 
           <View style={{paddingRight: 0, flexDirection:"column"}}>
-            <ScreenHeaderBtn iconUrl={icons.likes} dimension="130%" resize = "contain" isLikeButton = "true" item = {item}/>
+            <LikeButton iconUrl={icons.likes} dimension="130%" resize = "contain" isLikeButton = "true" item = {item}/>
           </View>
 
           <View style={{paddingLeft: 25, paddingRight: 29, flexDirection:"column"}}>
-            <ScreenHeaderBtn iconUrl={icons.commments} dimension="120%" resize = "cover"/>
+            <LikeButton iconUrl={icons.commments} dimension="120%" resize = "cover"/>
             <Text style={{color:COLORS.white, paddingTop: 10, textAlign: 'center'}}>{random_commentsabbrNum}</Text>
           </View>
 
 
           <View style={{paddingVertical: 0, flexDirection:"column"}}>
-            <ScreenHeaderBtn iconUrl={icons.listens} dimension="120%" />
+            <LikeButton iconUrl={icons.listens} dimension="120%" />
             <Text style={{color:COLORS.white, paddingTop: 10, textAlign: 'center'}}>{random_viewsabbrNum}</Text>
             </View>
 
