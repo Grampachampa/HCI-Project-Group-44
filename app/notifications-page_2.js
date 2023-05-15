@@ -30,18 +30,26 @@ const NotificationItem = ({ message, onDismiss }) => {
 
 export const Notifications = ({ navigation }) => {
 
-    const [notifications, setNotifications] = useState([
-        { id: 1, message: 'Rob starting following you',  time: '9 minutes ago'},
-        { id: 2, message: 'Maria liked your latest post', time: '15 minutes ago' },
-        { id: 3, message: 'Debra started following you', time: '1 hour ago' },
-        {id: 4, message: 'You have a new message from Daniel', time: '1 hour ago'},
-        {id: 5, message: 'Daniel liked your latest post', time: '1 hour ago'},
-        {id: 6, message: 'Daniel started following you', time: '2 hour ago'},
-        {id: 7, message: 'Jennifer started following you', time: '2 hour ago'},
-        {id: 8, message: 'Jenna liked your latest post', time: '2 hour ago'},
-        {id: 9, message: 'You have a new message from Jenna', time: '2 hour ago'},
-        {id: 10, message: 'Michael started following you', time: '3 hour ago'},
-      ]);
+  const [notifications, setNotifications] = useState([
+    { id: 1, message: 'Rob starting following you', time: '9 minutes ago' },
+    { id: 2, message: 'Maria liked your latest post', time: '15 minutes ago' },
+    { id: 3, message: 'Debra started following you', time: '1 hour ago' },
+    { id: 4, message: 'You have a new message from Daniel', time: '1 hour ago' },
+    { id: 5, message: 'Daniel liked your latest post', time: '1 hour ago' },
+    { id: 6, message: 'Daniel started following you', time: '2 hours ago' },
+    { id: 7, message: 'Jennifer started following you', time: '2 hours ago' },
+    { id: 8, message: 'Jenna liked your latest post', time: '2 hours ago' },
+    { id: 9, message: 'You have a new message from Jenna', time: '2 hours ago' },
+    { id: 10, message: 'Michael started following you', time: '3 hours ago' },
+    { id: 11, message: 'Sarah liked your latest post', time: '3 hours ago' },
+    { id: 12, message: 'You have a new message from Sarah', time: '3 hours ago' },
+    { id: 13, message: 'John commented on your post', time: '4 hours ago' },
+    { id: 14, message: 'You have a new message from John', time: '4 hours ago' },
+    { id: 15, message: 'Emily started following you', time: '5 hours ago' },
+    { id: 16, message: 'Emily liked your latest post', time: '5 hours ago' },
+    // Add 10 more notifications here
+  ]);
+  
       
     const handleNotificationPress = (id) => {
         const updatedNotifications = notifications.filter((n) => n.id !== id);
