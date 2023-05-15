@@ -5,7 +5,6 @@ import { useCallback} from 'react';
 import { useFonts } from 'expo-font';
 import * as splash from 'expo-splash-screen';
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import {HomeScreen} from '../screens/home'
 import { COLORS, icons, images, SIZES } from '../constants';
 import {Nearbyjobs, Popularjobs, ScreenHeaderBtn, Welcome} from '../components';
 
@@ -30,14 +29,14 @@ function returnHome() {
         
         <SafeAreaProvider style={{}}>
                 <Tabs screenOptions = {{
-                    headerStyle: {backgroundColor: COLORS.backgroundBlue},
+                    headerStyle: {backgroundColor: COLORS.backgroundBlue, height: 100},
                     headerShadowVisible: false,
                     tabBarShowLabel : false,
 
                     tabBarStyle : {backgroundColor: COLORS.darkerGreen, height: 80, borderTopWidth: 1, borderTopColor: COLORS.lighterGreen, shadowOpacity: 0},
 
                     headerLeft: () => (
-                        <View style={{paddingHorizontal: horizontalPaddingHLeft, marginVertical:verticalPaddingHLeft}}><ScreenHeaderBtn iconUrl={icons.logo} dimension="150%" resize = "center"/></View>
+                        <View style={{paddingHorizontal: horizontalPaddingHLeft, marginBottom:13}}><ScreenHeaderBtn iconUrl={icons.logo} dimension="150%" resize = "center"/></View>
                     ),
                     headerRight: () => (
                         
@@ -51,7 +50,7 @@ function returnHome() {
 
 
                     tabBarInactiveBackgroundColor: COLORS.darkerGreen,
-                    tabBarActiveBackgroundColor: COLORS.darkerGreen,
+                    tabBarActiveBackgroundColor: COLORS.slightlyLessDarkGreen,
                     tabBarActiveTintColor: COLORS.lighterGreen,
                     tabBarInactiveTintColor: COLORS.white,
                 }}>
@@ -143,19 +142,19 @@ const  screenOptions = ({ navigation }) => ({
     headerShadowVisible: false,
 
     headerLeft: () => (
-        <View style={{paddingHorizontal: horizontalPaddingHLeft, marginVertical:verticalPaddingHLeft}}><ScreenHeaderBtn iconUrl={icons.logo} dimension="150%" resize = "center"/></View>
+        <View style={{paddingHorizontal: horizontalPaddingHLeft, marginBottom:13}}><ScreenHeaderBtn iconUrl={icons.logo} dimension="150%" resize = "center"/></View>
     ),
     headerRight: () => (
         
         <View style={{flexDirection:"row"}}>
             <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.tuning} dimension="100%"/></View>
-            <View style={{paddingHorizontal: horizontalPaddingHRight}}>
-                <TouchableOpacity onPress={() => navigation.navigate('Notifications')}>
-                    <ScreenHeaderBtn iconUrl={icons.notification} dimension="80%"/>
-                </TouchableOpacity>
-            </View>
+            <TouchableOpacity onPress={() => navigation.navigate('Notifications')}>
+            <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.notification} dimension="80%" navigation={navigation}/></View>
+            </TouchableOpacity>
             <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.message} dimension="100%" resize = "cover" /></View>
         </View>
     ),
     headerTitle: "",
 });
+
+

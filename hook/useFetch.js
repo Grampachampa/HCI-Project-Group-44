@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import {COLORS, icons, images, SIZES} from '../constants'
 import axios from "axios";
 //import TOP_SONGS_API_KEY from '@env';
 import { set } from 'react-native-reanimated';
@@ -2187,6 +2188,7 @@ songData['loved'].forEach(function(theArray){
   theArray["views"] = random_views;
   theArray["comments"] = random_comments;
   theArray["isLiked"] = false;
+  theArray["iconUsed"] = icons.liked;
 
  
 })

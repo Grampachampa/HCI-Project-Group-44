@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { View, TextInput, FlatList, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { songs } from './liked_songs';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import {COLORS, icons, images, SIZES} from '../constants'
+
 
 const songsData = [
   { id: 9, title: 'Whispering Shadows', artist: 'Luna Rainheart', image_path: require('../Images/whisperinshadows.jpeg') },
@@ -46,13 +48,14 @@ const SearchScreen = ({ navigation }) => {
 
   return (
     <View style={{ flex: 1, backgroundColor: '#03001C' }}>
-
+      <View style={{paddingTop: 10}}>
       <TextInput
-        style={{ height: 40, borderColor: '#887D7D', borderWidth: 1, paddingHorizontal: 10, color: 'black', backgroundColor: 'white', borderRadius: 10, margin: 5}}
+        style={{ height: 40, borderColor: '#887D7D', borderWidth: 1, paddingHorizontal: 10, color: 'black', backgroundColor: 'white', borderRadius: 10, margin: 5, marginTop: 0}}
         placeholder="Albums, Songs or Artists"
         value={searchQuery}
         onChangeText={handleSearch}
       />
+      </View>
       {searchResults.length > 0 && (
         <View>
           <Text style={styles.searchResultstext}>Top Searches:</Text>
@@ -75,7 +78,7 @@ const SearchScreen = ({ navigation }) => {
               </View>
               <View style={{flex: 1, paddingTop: 40}}>
                 <TouchableOpacity onPress={() => handleAddToLikedSongs(item, songs)}>
-                  <Image style={{flex: 1, fontSize: 30, alignItems: 'center', height: 30, width: 30, resizeMode: 'contain'}} source={require('../Images/heart_button.png')}/>
+                  <Image style={{flex: 1, fontSize: 30, alignItems: 'center', height: 30, width: 30, resizeMode: 'contain'}} source={icons.likes}/>
                 </TouchableOpacity>
               </View>
             </View>
