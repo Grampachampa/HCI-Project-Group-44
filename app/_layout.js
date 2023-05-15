@@ -41,8 +41,10 @@ function returnHome() {
                     headerRight: () => (
                         
                         <View style={{flexDirection:"row"}}>
-                            <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.tuning} dimension="100%"/></View>
-                            <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.notification} dimension="80%"/></View>
+                            <View style={{paddingHorizontal: horizontalPaddingHRight}}>
+                              <ScreenHeaderBtn iconUrl={icons.tuning} dimension="100%"/>
+                            </View>
+                              <ScreenHeaderBtn iconUrl={icons.notification} dimension="80%"/>
                             <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.message} dimension="100%" resize = "cover" /></View>
                         </View>
                     ),
@@ -136,25 +138,3 @@ function returnHome() {
 var horizontalPaddingHRight = 5;
 var horizontalPaddingHLeft = 20;
 var verticalPaddingHLeft = 0;
-
-const  screenOptions = ({ navigation }) => ({
-    headerStyle: {backgroundColor: COLORS.backgroundBlue},
-    headerShadowVisible: false,
-
-    headerLeft: () => (
-        <View style={{paddingHorizontal: horizontalPaddingHLeft, marginBottom:13}}><ScreenHeaderBtn iconUrl={icons.logo} dimension="150%" resize = "center"/></View>
-    ),
-    headerRight: () => (
-        
-        <View style={{flexDirection:"row"}}>
-            <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.tuning} dimension="100%"/></View>
-            <TouchableOpacity onPress={() => navigation.navigate('Notifications')}>
-            <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.notification} dimension="80%" navigation={navigation}/></View>
-            </TouchableOpacity>
-            <View style={{paddingHorizontal: horizontalPaddingHRight}}><ScreenHeaderBtn iconUrl={icons.message} dimension="100%" resize = "cover" /></View>
-        </View>
-    ),
-    headerTitle: "",
-});
-
-

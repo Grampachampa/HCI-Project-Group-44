@@ -68,7 +68,14 @@ const ScreenHeaderBtn = ({iconUrl, dimension, resize, isLikeButton, item}) => {
     }
   }
   return (
-    <TouchOpacityOutput/>
+    <TouchableOpacity style={styles.btnContainer} onPress={() => onPressHandler()}>
+
+        <Image 
+          source = {iconUrl}
+          resizeMode = {resize}
+          style={styles.btnImg(dimension)}
+        />
+    </TouchableOpacity>
     
   )
 }

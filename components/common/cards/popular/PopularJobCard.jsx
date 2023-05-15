@@ -5,7 +5,6 @@ import styles from './popularjobcard.style'
 import {LikeButton} from '../../../../components';
 import { SongBody } from '../../../../app/song_body';
 import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
 
 
 
@@ -15,6 +14,7 @@ const PopularJobCard =  ({item, selectedJob, navigation}) => {
   const random_likesabbrNum = abbrNum(item?.likes, 1);
   const random_commentsabbrNum = abbrNum(item?.comments, 1);  
   const songcover = item?.strTrackThumb 
+  
   return (
       <View>
 
@@ -61,7 +61,7 @@ const PopularJobCard =  ({item, selectedJob, navigation}) => {
           <View style={{paddingVertical: 0, flexDirection:"column"}}>
             <LikeButton iconUrl={icons.listens} dimension="120%" />
             <Text style={{color:COLORS.white, paddingTop: 10, textAlign: 'center'}}>{random_viewsabbrNum}</Text>
-            </View>
+          </View>
 
             
 
