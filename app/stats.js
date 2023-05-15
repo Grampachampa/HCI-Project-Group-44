@@ -190,7 +190,7 @@ const ViewPage = () => {
                 if (index === 0){
                   return(
                     <View style={{alignItems: "center", padding: 10}}>
-                      <Text style={{color: COLORS.white, fontSize: 25, fontWeight: "bold"}}>Most Viewed</Text>
+                      <Text style={{color: COLORS.white, fontSize: 25, fontWeight: "bold"}}>Most Listened</Text>
                     </View>
                   );
                 }else {
@@ -241,7 +241,7 @@ const style = StyleSheet.create({
 })
 
 const SwipingNavigator = () => (
-  <Swiper loop={true} showsPagination={false}>
+  <Swiper loop={false} showsPagination={true} dotColor = {COLORS.darkerGreen} activeDotColor={COLORS.lighterGreen}>
     <LikedPage />
     <CommentPage />
     <ViewPage />
