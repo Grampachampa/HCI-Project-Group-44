@@ -2,7 +2,7 @@ import {useState, useEffect, React} from 'react'
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 import {COLORS, icons, images, SIZES} from '../../../../constants'
 import styles from './popularjobcard.style'
-import {ScreenHeaderBtn} from '../../../../components';
+import {LikeButton} from '../../../../components';
 import { SongBody } from '../../../../app/song_body';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -20,7 +20,7 @@ const PopularJobCard =  ({item, selectedJob, navigation}) => {
 
       <TouchableOpacity
       style= {styles.container(selectedJob, item)}
-      onPress={() => navigation.navigate('SongBody')}
+      //onPress={() => navigation.navigate('SongBody')}
       >
 
         <View style={{flexDirection:"row"}}>
@@ -49,18 +49,17 @@ const PopularJobCard =  ({item, selectedJob, navigation}) => {
         <View style={{flexDirection:"row", marginLeft:"53%", marginTop: "24%", justifyContent:"center", position:"absolute"}}>
 
           <View style={{paddingRight: 0, flexDirection:"column"}}>
-            <ScreenHeaderBtn iconUrl={icons.likes} dimension="130%" resize = "contain"/>
-            <Text style={{color:COLORS.white, paddingTop: 10, textAlign: 'center'}}>{random_likesabbrNum}</Text>
+            <LikeButton iconUrl={icons.likes} dimension="130%" resize = "contain" isLikeButton = "true" item = {item}/>
           </View>
 
           <View style={{paddingLeft: 25, paddingRight: 29, flexDirection:"column"}}>
-            <ScreenHeaderBtn iconUrl={icons.commments} dimension="120%" resize = "cover"/>
+            <LikeButton iconUrl={icons.commments} dimension="120%" resize = "cover"/>
             <Text style={{color:COLORS.white, paddingTop: 10, textAlign: 'center'}}>{random_commentsabbrNum}</Text>
           </View>
 
 
           <View style={{paddingVertical: 0, flexDirection:"column"}}>
-            <ScreenHeaderBtn iconUrl={icons.listens} dimension="120%" />
+            <LikeButton iconUrl={icons.listens} dimension="120%" />
             <Text style={{color:COLORS.white, paddingTop: 10, textAlign: 'center'}}>{random_viewsabbrNum}</Text>
             </View>
 
@@ -81,7 +80,7 @@ const PopularJobCard =  ({item, selectedJob, navigation}) => {
 
 
 
-function abbrNum(number, decPlaces) {
+export function abbrNum(number, decPlaces) {
   // 2 decimal places => 100, 3 => 1000, etc
   decPlaces = Math.pow(10,decPlaces);
 

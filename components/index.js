@@ -1,4 +1,5 @@
 import ScreenHeaderBtn from "./common/header/ScreenHeaderBtn";
+import LikeButton from "./common/header/likeButton";
 
 // home screen
 import Welcome from "./home/welcome/Welcome";
@@ -25,5 +26,6 @@ export {
   JobAbout,
   JobFooter,
   Specifics,
-  NearbyJobCard
+  NearbyJobCard,
+  LikeButton
 };

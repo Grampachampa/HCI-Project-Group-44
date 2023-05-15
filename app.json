@@ -5,6 +5,7 @@
       "bundler": "metro"
     },
     "name": "trvCvlt",
-    "slug": "trvCvlt"
+    "slug": "trvCvlt",
+    "orientation": "portrait"
   }
 }
