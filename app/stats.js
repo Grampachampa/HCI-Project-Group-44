@@ -8,6 +8,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Swiper from 'react-native-swiper';
+import {LikeButton} from '../components';
+import { abbrNum } from '../components/common/cards/popular/PopularJobCard';
+
+
+
 
 
 const LikedPage = () => {
@@ -34,10 +39,14 @@ const LikedPage = () => {
               style={{}}
               keyExtractor={(item) => item.strMusicBrainzID.toString()}
               renderItem={({ item, index }) => {
+
+                const random_viewsabbrNum = abbrNum(item?.views, 1);
+                const random_likesabbrNum = abbrNum(item?.likes, 1);
+                const random_commentsabbrNum = abbrNum(item?.comments, 1);
                 if (index === 0){
                   return(
                     <View style={{alignItems: "center", padding: 10}}>
-                      <Text style={[style.text, {fontSize: 25}]}>From most liked to least liked</Text>
+                      <Text style={{color: COLORS.white, fontSize: 25, fontWeight: "bold"}}>Most Liked</Text>
                     </View>
                   );
                 }else {
@@ -50,18 +59,21 @@ const LikedPage = () => {
                       <Text numberOfLines={1} ellipsizeMode="clip" style={[style.text, {fontSize: 11}]}>{item.strAlbum}</Text>
                       <Text numberOfLines={1} ellipsizeMode="clip" style={[style.text, {fontSize: 18, color: "white"}]}>{item.strArtist}</Text>
                     </View>
-                    <View style={{flex:1, flexDirection: 'row'}}>
-                      <View style={{flex:1, flexDirection: "column", marginLeft: 15, alignContent: "center", justifyContent: "center"}}>
-                        <Image source={icons.likes} style={{flex:1, height: 50, width: 40}}></Image>
-                        <Text style={style.text}>{item.likes}</Text>
+                    <View style={{flex:1, flexDirection: 'row', marginLeft:20}}>
+                      
+                      <View style={{paddingRight: 0, flexDirection:"column"}}>
+                        <LikeButton iconUrl={icons.likes} dimension="130%" resize = "contain" isLikeButton = "true" item = {item}/>
                       </View>
-                      <View style={{flex:1, flexDirection: "column", alignContent: "center", justifyContent: "center"}}>
-                        <Image source={icons.commments} style={{flex:1, height: 50, width: 60}}></Image>
-                        <Text style={[style.text, {marginLeft: 10,}]}>{item.comments}</Text>
+
+                      <View style={{paddingLeft: 25, paddingRight: 29, flexDirection:"column"}}>
+                        <LikeButton iconUrl={icons.commments} dimension="120%" resize = "cover"/>
+                        <Text style={{color:COLORS.white, paddingTop: 10, textAlign: 'center'}}>{random_commentsabbrNum}</Text>
                       </View>
-                      <View style={{flex:1, flexDirection: "column", marginRight: 5, alignContent: "center", justifyContent: "center", alignItems: "center"}}>
-                        <Image source={icons.listens} style={{flex:1, height: 50, width: 60}}></Image>
-                        <Text style={style.text}>{item.views}</Text>
+
+
+                      <View style={{paddingVertical: 0, flexDirection:"column"}}>
+                        <LikeButton iconUrl={icons.listens} dimension="120%" />
+                        <Text style={{color:COLORS.white, paddingTop: 10, textAlign: 'center'}}>{random_viewsabbrNum}</Text>
                       </View>
                     </View>
                   </View>
@@ -100,10 +112,13 @@ const CommentPage = () => {
               style={{}}
               keyExtractor={(item) => item.strMusicBrainzID.toString()}
               renderItem={({ item, index }) => {
+                const random_viewsabbrNum = abbrNum(item?.views, 1);
+                const random_likesabbrNum = abbrNum(item?.likes, 1);
+                const random_commentsabbrNum = abbrNum(item?.comments, 1);
                 if (index === 0){
                   return(
                     <View style={{alignItems: "center", padding: 10}}>
-                      <Text style={[style.text, {fontSize: 20}]}>From most commented to least commented</Text>
+                      <Text style={{color: COLORS.white, fontSize: 25, fontWeight: "bold"}}>Most Comments</Text>
                     </View>
                   );
                 }else {
@@ -116,18 +131,21 @@ const CommentPage = () => {
                       <Text numberOfLines={1} ellipsizeMode="clip" style={[style.text, {fontSize: 11}]}>{item.strAlbum}</Text>
                       <Text numberOfLines={1} ellipsizeMode="clip" style={[style.text, {fontSize: 18, color: "white"}]}>{item.strArtist}</Text>
                     </View>
-                    <View style={{flex:1, flexDirection: 'row'}}>
-                      <View style={{flex:1, flexDirection: "column", marginLeft: 15, alignContent: "center", justifyContent: "center"}}>
-                        <Image source={icons.likes} style={{flex:1, height: 50, width: 40}}></Image>
-                        <Text style={style.text}>{item.likes}</Text>
+                    <View style={{flex:1, flexDirection: 'row', marginLeft:20}}>
+                      
+                      <View style={{paddingRight: 0, flexDirection:"column"}}>
+                        <LikeButton iconUrl={icons.likes} dimension="130%" resize = "contain" isLikeButton = "true" item = {item}/>
                       </View>
-                      <View style={{flex:1, flexDirection: "column", alignContent: "center", justifyContent: "center"}}>
-                        <Image source={icons.commments} style={{flex:1, height: 50, width: 60}}></Image>
-                        <Text style={[style.text, {marginLeft: 10,}]}>{item.comments}</Text>
+
+                      <View style={{paddingLeft: 25, paddingRight: 29, flexDirection:"column"}}>
+                        <LikeButton iconUrl={icons.commments} dimension="120%" resize = "cover"/>
+                        <Text style={{color:COLORS.white, paddingTop: 10, textAlign: 'center'}}>{random_commentsabbrNum}</Text>
                       </View>
-                      <View style={{flex:1, flexDirection: "column", marginRight: 5, alignContent: "center", justifyContent: "center", alignItems: "center"}}>
-                        <Image source={icons.listens} style={{flex:1, height: 50, width: 60}}></Image>
-                        <Text style={style.text}>{item.views}</Text>
+
+
+                      <View style={{paddingVertical: 0, flexDirection:"column"}}>
+                        <LikeButton iconUrl={icons.listens} dimension="120%" />
+                        <Text style={{color:COLORS.white, paddingTop: 10, textAlign: 'center'}}>{random_viewsabbrNum}</Text>
                       </View>
                     </View>
                   </View>
@@ -166,10 +184,13 @@ const ViewPage = () => {
               style={{}}
               keyExtractor={(item) => item.strMusicBrainzID.toString()}
               renderItem={({ item, index }) => {
+                const random_viewsabbrNum = abbrNum(item?.views, 1);
+                const random_likesabbrNum = abbrNum(item?.likes, 1);
+                const random_commentsabbrNum = abbrNum(item?.comments, 1);
                 if (index === 0){
                   return(
                     <View style={{alignItems: "center", padding: 10}}>
-                      <Text style={[style.text, {fontSize: 25}]}>From most viewed to least viewed</Text>
+                      <Text style={{color: COLORS.white, fontSize: 25, fontWeight: "bold"}}>Most Viewed</Text>
                     </View>
                   );
                 }else {
@@ -182,18 +203,21 @@ const ViewPage = () => {
                       <Text numberOfLines={1} ellipsizeMode="clip" style={[style.text, {fontSize: 11}]}>{item.strAlbum}</Text>
                       <Text numberOfLines={1} ellipsizeMode="clip" style={[style.text, {fontSize: 18, color: "white"}]}>{item.strArtist}</Text>
                     </View>
-                    <View style={{flex:1, flexDirection: 'row'}}>
-                      <View style={{flex:1, flexDirection: "column", marginLeft: 15, alignContent: "center", justifyContent: "center"}}>
-                        <Image source={icons.likes} style={{flex:1, height: 50, width: 40}}></Image>
-                        <Text style={style.text}>{item.likes}</Text>
+                    <View style={{flex:1, flexDirection: 'row', marginLeft:20}}>
+                      
+                      <View style={{paddingRight: 0, flexDirection:"column"}}>
+                        <LikeButton iconUrl={icons.likes} dimension="130%" resize = "contain" isLikeButton = "true" item = {item}/>
                       </View>
-                      <View style={{flex:1, flexDirection: "column", alignContent: "center", justifyContent: "center"}}>
-                        <Image source={icons.commments} style={{flex:1, height: 50, width: 60}}></Image>
-                        <Text style={[style.text, {marginLeft: 10,}]}>{item.comments}</Text>
+
+                      <View style={{paddingLeft: 25, paddingRight: 29, flexDirection:"column"}}>
+                        <LikeButton iconUrl={icons.commments} dimension="120%" resize = "cover"/>
+                        <Text style={{color:COLORS.white, paddingTop: 10, textAlign: 'center'}}>{random_commentsabbrNum}</Text>
                       </View>
-                      <View style={{flex:1, flexDirection: "column", marginRight: 5, alignContent: "center", justifyContent: "center", alignItems: "center"}}>
-                        <Image source={icons.listens} style={{flex:1, height: 50, width: 60}}></Image>
-                        <Text style={style.text}>{item.views}</Text>
+
+
+                      <View style={{paddingVertical: 0, flexDirection:"column"}}>
+                        <LikeButton iconUrl={icons.listens} dimension="120%" />
+                        <Text style={{color:COLORS.white, paddingTop: 10, textAlign: 'center'}}>{random_viewsabbrNum}</Text>
                       </View>
                     </View>
                   </View>

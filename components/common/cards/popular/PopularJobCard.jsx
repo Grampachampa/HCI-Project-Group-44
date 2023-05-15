@@ -61,7 +61,7 @@ const PopularJobCard =  ({item, selectedJob, navigation}) => {
           <View style={{paddingVertical: 0, flexDirection:"column"}}>
             <LikeButton iconUrl={icons.listens} dimension="120%" />
             <Text style={{color:COLORS.white, paddingTop: 10, textAlign: 'center'}}>{random_viewsabbrNum}</Text>
-            </View>
+          </View>
 
             
 
