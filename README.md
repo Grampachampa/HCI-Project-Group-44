@@ -17,7 +17,7 @@ Step 5: Now, you should have everything you need to run the app.
 ## 🚀 How to Run
 Step 1: in the terminal window open to the folder that you cloned to your machine, run the following command:
 ```sh
-expo-cli start --tunnel                    
+expo-cli start --tunnel               
 ```
 Step 2: This should cause a QR code to appear in your terminal. Scan it in the Expo Go app (if on Android), or just with your normal camera and follow the link (if on iOS). 
 
