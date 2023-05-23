@@ -59,10 +59,10 @@ export const Notifications = ({ navigation }) => {
       };
       
     return (
-        <SafeAreaView style = {{flex: 1, backgroundColor:'#03001C'}}>
+        <SafeAreaView style = {{flex: 1, backgroundColor:'#99CEC7'}}>
 
             <View style={{flexDirection: 'row', paddingLeft: 25, width: '100%'}}>
-                <Text style={{flex: 0.75, fontSize:30, fontWeight: 'bold', color: 'white', paddingTop: 20}}>Your Notifications</Text>
+                <Text style={{flex: 0.75, fontSize:30, fontWeight: 'bold', color: '#1C2321', paddingTop: 20}}>Your Notifications</Text>
                 <View style={{flex: 0.20, paddingBottom:0}}>
                 <ClearAllButton onClearAll={handleClearAllNotifications}/>
                 </View>
@@ -86,7 +86,7 @@ export const Notifications = ({ navigation }) => {
                     
                     ))}
                 <View style={{width: '100%', alignItems: 'center', paddingTop: 10}}>
-                    <Text style={{color: 'white', fontSize: 15}}>No more notification below</Text>
+                    <Text style={{color: '#1C2321', fontSize: 15}}>No more notification below</Text>
                     </View>
                 </View>
             </ScrollView>
@@ -109,15 +109,15 @@ const style = StyleSheet.create({
     name_text: {
         fontSize: 20,
         fontWeight: 'bold',
-        color: 'white',},
+        color: '#1C2321',},
     time_text: {
         fontSize: 16,
-        color: '#159895',},
+        color: '#0A694E',},
     clearAllButton: {
         padding: 10,
-        backgroundColor: '#ccc',
         borderRadius: 5,
         marginTop: 20,
+        backgroundColor: '#C1C0C8',
         },   
     });
      

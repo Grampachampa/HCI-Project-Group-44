@@ -47,11 +47,11 @@ const SearchScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={{ flex: 1, backgroundColor: '#03001C' }}>
+    <View style={{ flex: 1, backgroundColor: '#99CEC7' }}>
       <View style={{paddingTop: 10}}>
-        <Text style = {{color: 'white', fontWeight: 'bold', fontSize: 30, paddingLeft: 8}}>Search Here:</Text>
+        <Text style = {{color: '#1C2321', fontWeight: 'bold', fontSize: 30, paddingLeft: 8}}>Search Here:</Text>
       <TextInput
-        style={{ height: 40, borderColor: '#665A5A', borderWidth: 1, paddingHorizontal: 10, color: 'black', backgroundColor: 'white', borderRadius: 10, margin: 5, paddingTop: 5}}
+        style={{ height: 40, borderColor: '#1C2321', borderWidth: 1, paddingHorizontal: 10, color: 'black', backgroundColor: 'white', borderRadius: 10, margin: 5, paddingTop: 5}}
         placeholder="Albums, Songs or Artists"
         value={searchQuery}
         onChangeText={handleSearch}
@@ -120,19 +120,19 @@ const styles = StyleSheet.create({
       height: 70,
       width: '80%'},
   name_song: {
-    color: 'white',
+    color: '#1C2321',
     fontWeight: 'bold',
     fontSize: 25,
     paddingTop: 5
     },
   artist_song: {
-    color: 'white',
+    color: '#0A694E',
     fontSize: 15,
     paddingTop: 5,
     color: '#868686'}
     ,
   searchResultstext: {
-    color: 'white',
+    color: '#1C2321',
     fontSize: 30,
     fontWeight: 'bold',
     paddingTop: 10
