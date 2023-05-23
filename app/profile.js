@@ -23,29 +23,29 @@ function Home ({ navigation }) {
           return (
             <Animated.View style={{ transform: [{ translateX: contentOffset.interpolate({ inputRange: [0, 1], outputRange: [200, 0] }) }] }}>
             <View>
-                <Text style={{textAlign:'center', fontSize:25, fontWeight:'bold', color: 'white', paddingTop: 10}}>My Uploads</Text>
+                <Text style={{textAlign:'center', fontSize:25, fontWeight:'bold', color: '#1C2321', paddingTop: 10}}>My Uploads</Text>
             <View style={{paddingLeft: 10, alignItems: 'center', paddingTop: 55, width: '100%'}}>
                 <View style={{flexDirection: 'row', justifyContent: 'space-between', height:250, width:'80%', paddingTop:30, alignItems: 'center'}}>
                     <View>
                         <TouchableOpacity onPress={() => navigation.navigate('ProfilePageLikedSongs')}>
                         <View>
                             <Image style={{resizeMode: 'contain', height:150, width:150}} source={require('../Images/Liked.png')}/>
-                            <Text style={{textAlign: 'center', paddingTop: 5, color: 'white'}}>Liked</Text>
+                            <Text style={{textAlign: 'center', paddingTop: 5, color: '#1C2321'}}>Liked</Text>
                         </View> 
                         </TouchableOpacity>   
                         <View style={{paddingTop: 10}}>
                             <Image style={{resizeMode: 'contain', height:150, width:150, borderRadius: 10}} source={require('../Images/Sunny_side_up.jpeg')}/>
-                            <Text style={{textAlign: 'center', paddingTop: 5, color: 'white'}}>Sunny Side Up</Text>
+                            <Text style={{textAlign: 'center', paddingTop: 5, color: '#1C2321'}}>Sunny Side Up</Text>
                         </View>
                     </View>
                     <View>
                         <View>
                             <Image style={{resizeMode: 'contain', height:150, width:150, borderRadius: 10}} source={require('../Images/Moonlight.png')}/>
-                            <Text style={{textAlign: 'center', paddingTop: 5, color: 'white'}}>Midnight Moods</Text>
+                            <Text style={{textAlign: 'center', paddingTop: 5, color: '#1C2321'}}>Midnight Moods</Text>
                         </View>
                         <View style={{paddingTop: 10}}>
                             <Image style={{resizeMode: 'contain', height:150, width:150, borderRadius: 10}} source={require('../Images/faith.png')}/>
-                            <Text style={{textAlign: 'center', paddingTop: 5, color: 'white'}}>Faith</Text>
+                            <Text style={{textAlign: 'center', paddingTop: 5, color: '#1C2321'}}>Faith</Text>
                         </View>
                     </View>
 
@@ -57,27 +57,27 @@ function Home ({ navigation }) {
                 return (
                     <Animated.View style={{ transform: [{ translateX: contentOffset.interpolate({ inputRange: [0, 1], outputRange: [0, -200] }) }] }}>
                     <View>
-                        <Text style={{textAlign:'center', fontSize:25, fontWeight:'bold', color: 'white', paddingTop: 10}}>My Playlists</Text>
+                        <Text style={{textAlign:'center', fontSize:25, fontWeight:'bold', color: '#1C2321', paddingTop: 10}}>My Playlists</Text>
                         <View style={{paddingLeft: 10, alignItems: 'center', paddingTop: 55, width: '100%'}}>
                             <View style={{flexDirection: 'row', justifyContent: 'space-between', height:250, width:'80%', paddingTop: 5, alignItems: 'center'}}>
                                 <View>
                                     <View>
                                         <Image style={{resizeMode: 'contain', height:150, width:150, borderRadius: 10}} source={require('../Images/just_an_echo.png')}/>
-                                        <Text style={{textAlign: 'center', paddingTop: 5, color: 'white'}}>Just an Echo</Text>
+                                        <Text style={{textAlign: 'center', paddingTop: 5, color: '#1C2321'}}>Just an Echo</Text>
                                     </View>    
                                     <View style={{paddingTop: 10}}>
                                         <Image style={{resizeMode: 'contain', height:150, width:150, borderRadius: 10}} source={require('../Images/galactic_reverie.png')}/>
-                                        <Text style={{textAlign: 'center', paddingTop: 5, color: 'white'}}>Galactic Reverie</Text>
+                                        <Text style={{textAlign: 'center', paddingTop: 5, color: '#1C2321'}}>Galactic Reverie</Text>
                                     </View>
                                 </View>
                                 <View>
                                     <View>
                                         <Image style={{resizeMode: 'contain', height:150, width:150, borderRadius: 10}} source={require('../Images/echoes_of_eup....png')}/>
-                                        <Text style={{textAlign: 'center', paddingTop: 5, color: 'white'}}>Echoes of Eup...</Text>
+                                        <Text style={{textAlign: 'center', paddingTop: 5, color: '#1C2321'}}>Echoes of Eup...</Text>
                                     </View>
                                     <View style={{paddingTop: 10}}>
                                         <Image style={{resizeMode: 'contain', height:150, width:150, borderRadius: 10}} source={require('../Images/dreamscape.png')}/>
-                                        <Text style={{textAlign: 'center', paddingTop: 5, color: 'white'}}>Dreamscape</Text>
+                                        <Text style={{textAlign: 'center', paddingTop: 5, color: '#1C2321'}}>Dreamscape</Text>
                                     </View>
                                 </View>
 
@@ -87,7 +87,7 @@ function Home ({ navigation }) {
                     </Animated.View>);}};
 
     return (
-        <SafeAreaView style = {{flex: 1, backgroundColor: '#03001C'}}>
+        <SafeAreaView style = {{flex: 1, backgroundColor: '#99CEC7'}}>
 
             <View style={styles.profile_container}>
                 <View style={{flex:1, paddingLeft:5}}>
@@ -95,8 +95,8 @@ function Home ({ navigation }) {
                     source={require('../Images/Profile_Picture.png')}/>
                 </View>
                 <View style={{flex:3, paddingLeft: 150, paddingTop: 30}}>
-                    <Text style={{fontSize:24, fontWeight:'bold' , color: 'white'}}>Aria Reynolds</Text>
-                    <Text style={{fontSize:12, fontWeight:'bold' , color: 'white', paddingTop: 10}}>Passionate musician. Connecting through music.</Text>
+                    <Text style={{fontSize:24, fontWeight:'bold' , color: '#1C2321'}}>Aria Reynolds</Text>
+                    <Text style={{fontSize:12, fontWeight:'bold' , color: '#1C2321', paddingTop: 10}}>Passionate musician. Connecting through music.</Text>
                 </View>
                 <View>
                     <TouchableOpacity onPress={() => navigation.navigate('Notifications')}>
